@@ -390,6 +390,7 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .year-shots figure { margin: 0; }
 .year-shots figure.tall img { aspect-ratio: 4 / 5; object-position: 50% 40%; }
 .year-shots img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%; border-radius: 10px; }
+.year-shots figure.wide img { aspect-ratio: auto; height: auto; object-fit: contain; }
 .year-shots figcaption { font-size: 13.5px; color: var(--muted); margin-top: 6px; line-height: 1.45; }
 .sec-awards .wrap { max-width: 1240px; }
 .stage-side { display: grid; gap: 14px; align-content: start; }
