@@ -336,6 +336,7 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .kit-stats > div + div { padding-left: 18px; border-left: 1px solid var(--line); }
 .kit-stats dt { font-size: 14px; color: var(--muted); }
 .kit-stats dd { margin: 0; font-size: clamp(30px, 3.6vw, 40px); font-weight: 700; line-height: 1.1; color: var(--accent); }
+.kit-stats dd.kit-word { font-family: var(--font-display); font-weight: 900; }
 .kit-stats dd small { font-size: 0.45em; margin-left: 2px; color: var(--muted); }
 .kit-stats span { font-size: 13px; color: var(--muted); }
 .kit-row { display: grid; grid-template-columns: 120px minmax(0, 1fr); gap: 28px; padding-block: 28px; border-top: 1px solid var(--line); }
