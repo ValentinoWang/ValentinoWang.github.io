@@ -324,14 +324,15 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .filter:hover { color: var(--ink); }
 .filter.is-on { background: var(--ink); color: var(--bg); border-color: var(--ink); }
 .years { display: grid; gap: 4px; }
-.year-shots { grid-column: 3; grid-row: 1 / span 2; align-self: start; position: sticky; top: 76px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+.year-shots { grid-column: 3; grid-row: 1 / span 2; align-self: start; position: sticky; top: 76px; display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
 .year-shots figure:first-child { grid-column: 1 / -1; }
 .year-shots figure:only-child img, .year-shots figure:first-child img { aspect-ratio: 16 / 10; }
 .year-shots figure { margin: 0; }
 .year-shots img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%; border-radius: 10px; }
-.year-shots figcaption { font-size: 12px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+.year-shots figcaption { font-size: 13.5px; color: var(--muted); margin-top: 6px; line-height: 1.45; }
+.sec-awards .wrap { max-width: 1240px; }
 .stage-side { display: grid; gap: 14px; align-content: start; }
-.year { display: grid; grid-template-columns: 84px minmax(0, 1fr) 300px; column-gap: 28px; padding-bottom: 28px; }
+.year { display: grid; grid-template-columns: 84px minmax(0, 1fr) 480px; column-gap: 32px; padding-bottom: 36px; }
 .year > ul { grid-column: 2; }
 .year h3 { font-size: 26px; font-weight: 700; color: var(--accent); position: sticky; top: 72px; align-self: start; border-top: 3px solid var(--accent); padding-top: 8px; }
 .year ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
@@ -364,6 +365,13 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .foot-small { margin-top: 24px; font-size: 12.5px; color: var(--muted); }
 
 /* ---------- 窄屏 ---------- */
+@media (max-width: 1100px) {
+  .stamp { right: 6px; }
+  .year { grid-template-columns: 72px minmax(0, 1fr); column-gap: 20px; }
+  .year-shots { grid-column: 2; grid-row: auto; position: static; display: flex; overflow-x: auto; margin-top: 14px; }
+  .year-shots figure, .year-shots figure:first-child { flex: 0 0 auto; width: 320px; }
+  .year-shots figure:first-child img { aspect-ratio: 4 / 3; }
+}
 @media (max-width: 900px) {
   .hero { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .hero-photo { max-width: 420px; }
@@ -404,7 +412,6 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
   .kit-row { grid-template-columns: minmax(0, 1fr); gap: 14px; }
   .kit-label { position: static; display: flex; gap: 8px; align-items: baseline; }
   .accounts { grid-template-columns: minmax(0, 1fr); }
-  .year { grid-template-columns: 72px minmax(0, 1fr) 200px; column-gap: 20px; }
   .radio-photo img { aspect-ratio: 4 / 3; }
   .radio-body { padding: 20px 18px; }
   .results thead { display: none; }
@@ -421,6 +428,6 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
   .year h3 { position: static; }
   .aw-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .year-shots { grid-column: 1; grid-row: auto; position: static; display: flex; grid-template-columns: none; overflow-x: auto; margin-top: 12px; }
-  .year-shots figure { flex: 0 0 auto; width: 200px; }
+  .year-shots figure, .year-shots figure:first-child { flex: 0 0 auto; width: 78%; }
   .year > ul { grid-column: 1; }
 }
