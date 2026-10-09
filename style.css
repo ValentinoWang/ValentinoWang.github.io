@@ -1,6 +1,6 @@
 /* 王思尧个人网站
    单页长卷，六个栏目各用一种展示形式：
-   教育 = 竖向年表 + 盖章成绩单；产品 = 手机实机截图 + 终端；学术 = 论文版式；
+   教育 = 竖向年表 + 盖章成绩单；产品 = 能力栏 + 手机截图 + 架构图 + 技术要点 + 项目卡片；学术 = 论文版式；
    体育 = 深色计分牌 + 照片墙；自媒体 = 账号主页卡 + 电视画面；奖项 = 按年份的时间轴。
    清华紫作主色，跑道红只用在体育相关处。不加载外部字体，国内打开更快。 */
 
@@ -25,7 +25,6 @@
   --night-ink: #e9ecf4;
   --night-muted: #8f97ab;
   --led: #ffb22e;
-  --term: #11141c;
 
   --font-display: "Songti SC", "STSong", "Noto Serif SC", "Source Han Serif SC", serif;
   --font-body: -apple-system, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans SC", sans-serif;
@@ -57,7 +56,7 @@
 
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; scroll-padding-top: 60px; }
-@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .cursor { animation: none !important; } }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 body {
   margin: 0;
   background: var(--bg);
@@ -160,35 +159,91 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .phone figcaption b { display: block; color: var(--ink); font-size: 15px; }
 .phones-note { font-size: 12.5px; color: var(--muted); }
 
-.build { margin-top: 48px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 36px; align-items: start; }
-.build-text h3, .lineage h3 { font-size: 22px; font-weight: 800; margin-bottom: 12px; }
-.build-text > p { color: var(--muted); }
-.build-stats { margin: 22px 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 10px; overflow: hidden; }
-.build-stats div { background: var(--surface); padding: 12px 16px; }
-.build-stats dt { font-size: 14px; color: var(--muted); }
-.build-stats dd { margin: 0; font-size: 26px; font-weight: 600; color: var(--accent); }
-.stack { margin-top: 14px; font-size: 12.5px; color: var(--muted); }
+/* 产品与技术：能力、架构、技术要点、研发流程、项目卡片 */
+/* ---------- 能力四栏 ---------- */
+.t-skills { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.t-skill { background: var(--surface); padding: 20px 20px 22px; display: grid; gap: 8px; align-content: start; }
+.t-skill h3 { font-size: 16.5px; font-weight: 800; }
+.t-skill p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.t-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
+.t-chips span { font-family: var(--font-mono); font-size: 11.5px; padding: 1px 7px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
 
-.terminal { background: var(--term); color: #d7dbe6; border-radius: 12px; overflow: hidden; box-shadow: 0 24px 50px -30px rgba(10, 10, 30, 0.7); min-width: 0; }
-.term-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: #1b1f2b; font-family: var(--font-mono); font-size: 12px; color: #7f879c; }
-.term-bar i { width: 10px; height: 10px; border-radius: 50%; background: #3a3f4f; }
-.term-bar i:nth-child(1) { background: #e0675a; } .term-bar i:nth-child(2) { background: #e2b54a; } .term-bar i:nth-child(3) { background: #5ec26a; }
-.term-bar span { margin-left: 8px; }
-.terminal pre { margin: 0; padding: 18px 20px 22px; font-family: var(--font-mono); font-size: 13px; line-height: 1.7; overflow-x: auto; white-space: pre; }
-.terminal b { color: #c9a8ff; font-weight: 600; }
-.terminal em { font-style: normal; color: #ffb22e; }
-.prompt { color: #5ec26a; }
-.cursor { display: inline-block; width: 8px; height: 15px; background: #d7dbe6; vertical-align: -2px; animation: blink 1.1s steps(1) infinite; }
-@keyframes blink { 50% { opacity: 0; } }
+/* ---------- 子标题 ---------- */
+.t-story { margin: 0 0 18px; color: var(--muted); max-width: 46em; }
+.t-sub { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin: 72px 0 20px; }
+.t-sub h3 { font-size: 24px; font-weight: 800; }
+.t-sub span { font-size: 14px; color: var(--muted); }
 
-.lineage { margin-top: 56px; }
-.lineage-track { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); position: relative; }
-.lineage-track::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 2px; background: var(--line); }
-.lineage-track li { position: relative; padding-top: 26px; padding-right: 12px; display: grid; gap: 2px; font-size: 14px; }
-.lineage-track li::before { content: ""; position: absolute; top: 2px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--tint); border: 2px solid var(--muted); }
-.lineage-track li.now::before { background: var(--accent); border-color: var(--accent); }
-.lineage-track span { font-size: 12px; color: var(--muted); }
-.lineage-track em { font-style: normal; font-size: 13px; color: var(--muted); }
+/* ---------- Cadenvo 规模 ---------- */
+.t-stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.t-stats div { background: var(--surface); padding: 14px 16px; }
+.t-stats dt { font-size: 13px; color: var(--muted); }
+.t-stats dd { margin: 0; font-family: var(--font-mono); font-size: 26px; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1.3; }
+.t-stats dd small { font-size: 14px; margin-left: 2px; }
+.t-role { margin: 14px 0 40px; font-size: 14.5px; color: var(--muted); max-width: 60em; }
+.t-role b { color: var(--ink); }
+
+/* ---------- 架构图 ---------- */
+.t-arch { margin-top: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; overflow-x: auto; }
+.t-arch svg { display: block; width: 100%; min-width: 820px; height: auto; }
+.t-arch figcaption { font-size: 13px; color: var(--muted); margin-top: 10px; }
+.s-box { fill: var(--surface); stroke: var(--line); stroke-width: 1.25; }
+.s-acc { fill: var(--accent-soft); stroke: var(--accent); stroke-width: 1.5; }
+.s-t { fill: var(--ink); font: 700 14px var(--font-body); }
+.s-s { fill: var(--muted); font: 12px var(--font-body); }
+.s-m { fill: var(--muted); font: 11.5px var(--font-mono); }
+.s-e { stroke: var(--muted); stroke-width: 1.25; fill: none; }
+.s-a { fill: var(--muted); }
+.s-lane { fill: none; stroke: var(--line); stroke-dasharray: 4 4; }
+.s-lab { fill: var(--accent); font: 700 11px var(--font-mono); letter-spacing: 0.08em; }
+
+/* ---------- 技术要点 ---------- */
+.t-deep { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+.t-card { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 22px 22px 20px; display: grid; gap: 10px; align-content: start; }
+.t-card .k { font-family: var(--font-mono); font-size: 12px; color: var(--accent); letter-spacing: 0.06em; }
+.t-card h4 { font-size: 17.5px; font-weight: 800; line-height: 1.45; }
+.t-card dl { margin: 0; display: grid; grid-template-columns: 3em minmax(0, 1fr); gap: 6px 10px; font-size: 14.5px; line-height: 1.7; }
+.t-card dt { color: var(--muted); font-weight: 700; font-size: 13px; padding-top: 1px; }
+.t-card dd { margin: 0; color: var(--ink); }
+.t-card code { font-family: var(--font-mono); font-size: 0.86em; padding: 0 4px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
+
+/* ---------- 研发体系：流程 + 代码块 ---------- */
+.t-flow-wrap { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 20px; align-items: stretch; }
+.t-flow { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; counter-reset: f; }
+.t-flow li { background: var(--surface); border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px 14px 54px; position: relative; font-size: 14.5px; color: var(--muted); }
+.t-flow li::before { counter-increment: f; content: counter(f, decimal-leading-zero); position: absolute; left: 16px; top: 14px; font-family: var(--font-mono); font-weight: 700; color: var(--accent); }
+.t-flow b { display: block; color: var(--ink); font-size: 15px; margin-bottom: 2px; }
+.t-code { box-shadow: 0 24px 50px -30px rgba(10, 10, 30, 0.7); background: #11141c; color: #d7dbe6; border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; min-width: 0; }
+.t-code-bar { display: flex; align-items: center; gap: 6px; padding: 10px 14px; background: rgba(255,255,255,0.05); font-family: var(--font-mono); font-size: 12px; color: #7f879c; }
+.t-code-bar i { width: 10px; height: 10px; border-radius: 50%; background: #3a3f4f; }
+.t-code-bar i:nth-child(1) { background: #e0675a; } .t-code-bar i:nth-child(2) { background: #e2b54a; } .t-code-bar i:nth-child(3) { background: #5ec26a; }
+.t-code-bar span { margin-left: 8px; }
+.t-code pre { margin: 0; padding: 16px 18px 20px; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.75; overflow-x: auto; white-space: pre; flex: 1; }
+.t-code .c { color: #7f879c; } .t-code .k { color: #c9a8ff; } .t-code .n { color: #ffb22e; } .t-code .ok { color: #5ec26a; }
+
+/* ---------- 其他项目 ---------- */
+.t-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+.t-proj { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 8px; }
+.t-proj .top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
+.t-proj .cat { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 0.04em; }
+.t-proj .ev { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); white-space: nowrap; }
+.t-proj h4 { font-size: 17px; font-weight: 800; }
+.t-proj p { font-size: 14px; color: var(--muted); line-height: 1.7; }
+.t-proj .foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; padding-top: 10px; border-top: 1px solid var(--line); }
+.t-proj .stack { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
+.t-proj a { font-size: 13px; font-weight: 600; white-space: nowrap; }
+.t-proj.wide { grid-column: span 2; }
+
+/* ---------- 迭代线 ---------- */
+.t-line { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); position: relative; }
+.t-line::before { content: ""; position: absolute; left: 0; right: 0; top: 7px; height: 2px; background: var(--line); }
+.t-line li { position: relative; padding: 26px 12px 0 0; display: grid; gap: 2px; align-content: start; font-size: 14px; }
+.t-line li::before { content: ""; position: absolute; top: 2px; left: 0; width: 12px; height: 12px; border-radius: 50%; background: var(--tint); border: 2px solid var(--muted); }
+.t-line li.now::before { background: var(--accent); border-color: var(--accent); }
+.t-line span { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.t-line em { font-style: normal; font-size: 13px; color: var(--muted); }
+
+.t-note { margin-top: 40px; font-size: 12.5px; color: var(--muted); }
 
 /* ---------- 03 学术：论文版式 ---------- */
 .paper { background: var(--paper); border: 1px solid var(--paper-line); padding: clamp(24px, 5vw, 56px); font-family: var(--font-display); }
@@ -377,7 +432,7 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 @media (max-width: 900px) {
   .hero { grid-template-columns: minmax(0, 1fr); gap: 32px; }
   .hero-photo { max-width: 420px; }
-  .edu-layout, .build, .paper-cols, .sport-grid, .awards-layout { grid-template-columns: minmax(0, 1fr); }
+  .edu-layout, .paper-cols, .sport-grid, .awards-layout { grid-template-columns: minmax(0, 1fr); }
   .mosaic { grid-template-columns: repeat(4, minmax(0, 1fr)); grid-auto-rows: 110px; }
   .m-a { grid-column: span 4; grid-row: span 3; }
   .m-b, .m-e, .m-f, .m-g { grid-column: span 2; grid-row: span 3; }
@@ -395,11 +450,6 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
   .transcript { transform: none; padding: 20px 18px 26px; }
   .phones { padding-inline: 16px; gap: 18px; }
   .phone { width: 200px; }
-  .lineage-track { grid-template-columns: minmax(0, 1fr); gap: 14px; }
-  .lineage-track::before { left: 5px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
-  .lineage-track li { padding: 0 0 0 26px; }
-  .lineage-track li::before { top: 4px; }
-  .terminal pre { font-size: 12px; }
   .board { grid-template-columns: minmax(0, 1fr); }
   .board-row { grid-template-columns: 4.5em minmax(0, 1fr) auto; align-items: center; gap: 12px; padding: 12px 16px; }
   .mosaic { grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-rows: 100px; gap: 8px; }
@@ -432,4 +482,23 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
   .year-shots { grid-column: 1; grid-row: auto; position: static; display: flex; grid-template-columns: none; overflow-x: auto; margin-top: 12px; }
   .year-shots figure, .year-shots figure:first-child { flex: 0 0 auto; width: 78%; }
   .year > ul { grid-column: 1; }
+}
+
+/* 产品与技术：窄屏 */
+@media (max-width: 960px) {
+  .t-skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .t-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .t-flow-wrap, .t-deep { grid-template-columns: minmax(0, 1fr); }
+  .t-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 640px) {
+  .t-skills, .t-projects { grid-template-columns: minmax(0, 1fr); }
+  .t-proj.wide { grid-column: auto; }
+  .t-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .t-card dl { grid-template-columns: minmax(0, 1fr); gap: 2px; }
+  .t-card dd { margin-bottom: 6px; }
+  .t-line { grid-template-columns: minmax(0, 1fr); gap: 14px; }
+  .t-line::before { left: 5px; right: auto; top: 0; bottom: 0; width: 2px; height: auto; }
+  .t-line li { padding: 0 0 0 26px; }
+  .t-line li::before { top: 4px; }
 }

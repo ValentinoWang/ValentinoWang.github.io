@@ -115,10 +115,48 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-tag"><b class="mono">02</b>产品与技术</span>
-      <h2>Cadenvo</h2>
-      <p>到了清华深圳，身边没有教练，我只好自己当自己的教练，后来又从零组起一支田径队。训练记了很多，却没有一个系统真正懂训练：三个月前的加速跑和今天比怎样，力量涨了起跑有没有变快，答案散在 Excel、聊天记录和教练的脑子里。Cadenvo 想把专业队才有的长期观察和周期调整，带给每个认真训练的人。</p>
-      <p>给教练和运动员的训练管理软件，从田径场景切入，覆盖计划安排、人员管理、训练执行、记录反馈和教练复盘。除测评模块外，主体功能已经完成，正在准备首批教练和训练机构试点。</p>
+      <h2>从数据库到界面，再到让 AI 一起写代码的工程体系</h2>
+      <p>主线是自己发起的训练管理产品 Cadenvo：从需求、数据模型、后端服务、前端界面到测试和验收，全链路由我主导。围绕它，我搭了一套让多个 AI 编程智能体并行开发、又能被机器核实的研发体系，并把其中的工具单独开源。此前做过计算机视觉检测和工业桌面软件。</p>
     </div>
+
+    <!-- 能力四栏 -->
+    <div class="t-skills">
+      <div class="t-skill">
+        <h3>全栈产品工程</h3>
+        <p>多角色 Web 应用，从数据建模、接口契约到前端组件和设计系统。</p>
+        <div class="t-chips"><span>Flutter</span><span>FastAPI</span><span>PostgreSQL</span><span>OpenAPI</span></div>
+      </div>
+      <div class="t-skill">
+        <h3>大模型应用</h3>
+        <p>结构化输出、流式进度、确定性校验和兜底，模型调用可计量、可重试。</p>
+        <div class="t-chips"><span>DeepSeek</span><span>JSON Schema</span><span>Pydantic</span><span>OCR</span></div>
+      </div>
+      <div class="t-skill">
+        <h3>AI 研发效能</h3>
+        <p>多智能体并行开发、自动门禁、代码地图和规则治理，有开源的 MCP 工具。</p>
+        <div class="t-chips"><span>Codex</span><span>Claude Code</span><span>MCP</span><span>CI</span></div>
+      </div>
+      <div class="t-skill">
+        <h3>计算机视觉</h3>
+        <p>工业缺陷检测的迁移学习与域适应、光学测量，3 篇论文。</p>
+        <div class="t-chips"><span>PyTorch</span><span>YOLO</span><span>OpenCV</span><span>PySide6</span></div>
+      </div>
+    </div>
+
+    <!-- ===== Cadenvo ===== -->
+    <div class="t-sub"><h3>Cadenvo · 训练管理系统</h3><span>2026-08 至今 · 发起人、技术负责人</span></div>
+    <p class="t-story">到了清华深圳，身边没有教练，我只好自己当自己的教练，后来又从零组起一支田径队。训练记了很多，却没有一个系统真正懂训练：三个月前的加速跑和今天比怎样，力量涨了起跑有没有变快，答案散在 Excel、聊天记录和教练的脑子里。Cadenvo 想把专业队才有的长期观察和周期调整，带给每个认真训练的人。</p>
+
+    <dl class="t-stats">
+      <div><dt>代码</dt><dd>22<small>万行</small></dd></div>
+      <div><dt>API 接口</dt><dd>335</dd></div>
+      <div><dt>数据模型</dt><dd>537</dd></div>
+      <div><dt>测试文件</dt><dd>619</dd></div>
+      <div><dt>数据库迁移</dt><dd>71</dd></div>
+      <div><dt>验收截图</dt><dd>310</dd></div>
+    </dl>
+    <p class="t-role">面向教练和运动员，覆盖计划、人员、执行记录、成绩分析和复盘，分教练、运动员、组织管理员、平台运营四个工作区。<b>我负责产品定义、数据模型与业务规则、任务拆分与验收标准，以及整套研发流程</b>；编码大量交给编程智能体并行完成。主仓库 665 次提交中 544 次由我提交。</p>
+
   </div>
 
   <div class="phones" tabindex="0" aria-label="Cadenvo 页面截图，可横向滚动">
@@ -143,51 +181,234 @@
   <div class="wrap">
     <p class="phones-note">截图来自 Cadenvo 的验收画廊，使用演示数据。</p>
 
-    <div class="build">
-      <div class="build-text">
-        <h3>怎么做出来的</h3>
-        <p>几乎所有代码由多个 AI 编程智能体并行完成，我负责产品决策、拆任务和看图验收。每条开发线有独立的工作区和调试服务；每个界面问题先写成一条会失败的自动检查，再去修复；每张页面截图都登记在画廊里，作为验收材料。</p>
-        <dl class="build-stats">
-          <div><dt>提交</dt><dd class="mono">660+</dd></div>
-          <div><dt>测试文件</dt><dd class="mono">620+</dd></div>
-          <div><dt>数据库迁移</dt><dd class="mono">72</dd></div>
-          <div><dt>验收截图</dt><dd class="mono">311</dd></div>
+    <figure class="t-arch">
+      <svg viewBox="0 0 1040 330" role="img" aria-labelledby="arch-t">
+        <title id="arch-t">Cadenvo 系统架构：Flutter Web 前端通过自动生成的 Dart SDK 调用 FastAPI，后端连接 PostgreSQL 和后台任务进程，任务进程调用大模型和 OCR</title>
+        <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="s-a"/></marker></defs>
+
+        <rect x="6" y="6" width="236" height="318" rx="10" class="s-lane"/>
+        <text x="20" y="28" class="s-lab">CLIENT</text>
+        <rect x="22" y="44" width="204" height="70" rx="8" class="s-box"/>
+        <text x="38" y="70" class="s-t">Flutter Web</text>
+        <text x="38" y="92" class="s-s">教练 · 运动员 · 组织 · 平台</text>
+        <rect x="22" y="132" width="204" height="62" rx="8" class="s-box"/>
+        <text x="38" y="158" class="s-t">设计系统 + 门禁</text>
+        <text x="38" y="178" class="s-m">check.dart · widget tests</text>
+        <rect x="22" y="212" width="204" height="96" rx="8" class="s-acc"/>
+        <text x="38" y="238" class="s-t">生成的 Dart SDK</text>
+        <text x="38" y="260" class="s-s">只能调用后端真实存在的</text>
+        <text x="38" y="278" class="s-s">接口和字段</text>
+
+        <rect x="286" y="6" width="420" height="318" rx="10" class="s-lane"/>
+        <text x="300" y="28" class="s-lab">SERVER</text>
+        <rect x="302" y="44" width="388" height="70" rx="8" class="s-box"/>
+        <text x="318" y="70" class="s-t">FastAPI · 62 个路由模块</text>
+        <text x="318" y="92" class="s-s">JWT 鉴权 · 组织多租户 · 敏感字段 Fernet 加密</text>
+        <rect x="302" y="132" width="186" height="80" rx="8" class="s-acc"/>
+        <text x="318" y="158" class="s-t">OpenAPI 3</text>
+        <text x="318" y="180" class="s-m">335 paths</text>
+        <text x="318" y="198" class="s-m">537 schemas</text>
+        <rect x="504" y="132" width="186" height="80" rx="8" class="s-box"/>
+        <text x="520" y="158" class="s-t">领域服务</text>
+        <text x="520" y="180" class="s-s">计划编译 · 成绩可比性</text>
+        <text x="520" y="198" class="s-s">名称对齐 · 发布检查</text>
+        <rect x="302" y="230" width="388" height="78" rx="8" class="s-box"/>
+        <text x="318" y="256" class="s-t">后台任务进程</text>
+        <text x="318" y="278" class="s-m">FOR UPDATE SKIP LOCKED + 租约</text>
+        <text x="318" y="296" class="s-s">计划整理 · OCR 识别 · 批量发布 · 测评报告</text>
+
+        <rect x="750" y="6" width="284" height="318" rx="10" class="s-lane"/>
+        <text x="764" y="28" class="s-lab">DATA &amp; AI</text>
+        <rect x="766" y="44" width="252" height="70" rx="8" class="s-box"/>
+        <text x="782" y="70" class="s-t">PostgreSQL</text>
+        <text x="782" y="92" class="s-m">SQLAlchemy 2 · Alembic ×71</text>
+        <rect x="766" y="132" width="252" height="80" rx="8" class="s-acc"/>
+        <text x="782" y="158" class="s-t">大模型（OpenAI 兼容）</text>
+        <text x="782" y="180" class="s-s">JSON Schema 结构化输出</text>
+        <text x="782" y="198" class="s-s">流式进度 · 用量计量</text>
+        <rect x="766" y="230" width="252" height="78" rx="8" class="s-box"/>
+        <text x="782" y="256" class="s-t">OCR 管线</text>
+        <text x="782" y="278" class="s-s">OpenCV 预处理 · 两遍识别</text>
+        <text x="782" y="296" class="s-s">可断点续跑</text>
+
+        <path d="M226 260 H264 V79 H296" class="s-e" marker-end="url(#ah)"/>
+        <path d="M395 132 V120" class="s-e"/>
+        <path d="M302 172 H276 V290 H232" class="s-e" marker-end="url(#ah)"/>
+        <text x="236" y="284" class="s-m">gen</text>
+        <path d="M690 79 H760" class="s-e" marker-end="url(#ah)"/>
+        <path d="M690 269 H720 V172 H760" class="s-e" marker-end="url(#ah)"/>
+        <path d="M720 269 H760" class="s-e" marker-end="url(#ah)"/>
+        <path d="M597 212 V224" class="s-e" marker-end="url(#ah)"/>
+      </svg>
+      <figcaption>系统架构。紫色框是对外契约和模型调用这两个最需要约束的边界。</figcaption>
+    </figure>
+
+    <div class="t-sub"><h3>技术要点</h3><span>每条都对应仓库里的实际实现</span></div>
+
+    <div class="t-deep">
+      <article class="t-card">
+        <span class="k">LLM · STRUCTURED OUTPUT</span>
+        <h4>大模型整理训练计划：模型负责理解，规则负责定案</h4>
+        <dl>
+          <dt>问题</dt><dd>教练的计划写法五花八门：文字、Excel、拍照。直接信任模型输出，动作名会被「意译」，结果不可复现。</dd>
+          <dt>做法</dt><dd>按动作库和指标动态生成 JSON Schema 约束输出，再用 Pydantic 校验；动作名先走确定性对齐（库内名称、审核过的别名、教练自己确认过的叫法），模型只补语义匹配。对不上的标为「可补充」，不阻塞导入。</dd>
+          <dt>结果</dt><dd>同一输入得到稳定的动作归属，对齐逻辑可以单测；模型调用走 OpenAI 兼容接口，换供应商不改业务代码。</dd>
         </dl>
-        <p class="stack mono">Flutter Web · FastAPI · PostgreSQL · OpenAPI SDK · DeepSeek</p>
-      </div>
-
-      <div class="terminal" aria-label="其他项目">
-        <div class="term-bar"><i></i><i></i><i></i><span>~/ValentinoWang</span></div>
-        <pre><span class="prompt">$</span> ls --projects
-
-<b>MathArc Research</b>      <em>1100+ commits</em>
-  AI4Math 研究运行时：命题依赖图 + Lean + 反例搜索，
-  模型只能提候选，不能自己宣布「已证明」
-
-<b>Harness Engineering</b>   <em> 760+ commits</em>
-  AI 协作规范的唯一事实源：20 份规范、33 个技能，
-  每条规范都有机器门禁执行
-
-<b>OpenClaw Media</b>        <em>1370+ commits</em>
-  自媒体创作与运营系统，我自己的账号在用
-
-<b>ProjectNavigatorMCP</b>   给编程智能体的代码地图
-<b>Control-PromotionMCP</b>  把踩过的坑逐级升级成规则
-<b>codex-worker-router</b>   按质量、速度、成本挑模型
-<span class="prompt">$</span> <span class="cursor"></span></pre>
-      </div>
+      </article>
+      <article class="t-card">
+        <span class="k">STREAMING · UX</span>
+        <h4>流式输出，但校验逻辑一行不改</h4>
+        <dl>
+          <dt>问题</dt><dd>整理一周计划要几十秒，教练只看到转圈；改成流式又怕绕过已有的结构化校验。</dd>
+          <dt>做法</dt><dd>把流式分片重新拼回非流式的响应结构，校验照旧执行；进度模块只「旁观」不完整的 JSON，告诉教练哪几天已经整理好。</dd>
+          <dt>结果</dt><dd>等待期间能看到逐日进度，正确性仍只由一条校验路径决定。</dd>
+        </dl>
+      </article>
+      <article class="t-card">
+        <span class="k">POSTGRES · JOB QUEUE</span>
+        <h4>不引入消息队列的可靠后台任务</h4>
+        <dl>
+          <dt>问题</dt><dd>计划整理、OCR、批量发布都是慢任务，进程可能中途退出，多个进程不能重复处理同一任务。</dd>
+          <dt>做法</dt><dd>任务表直接放在 PostgreSQL，用 <code>SELECT … FOR UPDATE SKIP LOCKED</code> 认领，加处理租约，租约过期自动回收；模型请求指数退避重试，区分可重试和不可重试错误。OCR 分两遍识别，只有模型调用并发，数据库写入串行，可从中断处续跑。</dd>
+          <dt>结果</dt><dd>少一套中间件，部署和排障简单，任务不丢也不重复。</dd>
+        </dl>
+      </article>
+      <article class="t-card">
+        <span class="k">DOMAIN MODEL</span>
+        <h4>成绩「能一起查」不等于「能一起比」</h4>
+        <dl>
+          <dt>问题</dt><dd>同一项 100 米，手计和电计、顺风和逆风混在一起算最好成绩和趋势，结论就是错的。</dd>
+          <dt>做法</dt><dd>每种测试方法声明必须已知且一致的条件；分类条件按取值分组（「未知」单独成组），风速这类连续值只作筛选属性，不进入分组键；方法版本也参与分组。</dd>
+          <dt>结果</dt><dd>最好成绩和趋势只在可比的记录之间计算，规则集中在一个模块里，有单元测试覆盖。</dd>
+        </dl>
+      </article>
+      <article class="t-card">
+        <span class="k">CONTRACT</span>
+        <h4>前后端契约自动生成，字段对不上编译就失败</h4>
+        <dl>
+          <dt>做法</dt><dd>后端导出 OpenAPI，自动生成 Dart 客户端；前端只能通过它访问数据。数据库变更全部走 Alembic 迁移。</dd>
+          <dt>结果</dt><dd>接口改名、删字段在前端编译期暴露，而不是上线后才发现。</dd>
+        </dl>
+      </article>
+      <article class="t-card">
+        <span class="k">QUALITY GATES</span>
+        <h4>每个界面问题先写成会失败的门禁</h4>
+        <dl>
+          <dt>做法</dt><dd>问题先变成 widget 测试或设计系统静态检查，确认在当前代码上失败，再修到通过。例如禁止按构建模式分支、禁止把类型名渲染成文字、禁止非常量图标，保证调试版和发布版画面一致；日期格式、术语也有专门检查。</dd>
+          <dt>结果</dt><dd>同类问题不会第二次出现；310 张截图带源码指纹，没拍到最新代码的截图无法发布。</dd>
+        </dl>
+      </article>
     </div>
 
-    <div class="lineage">
-      <h3>同一个训练系统，做了五代</h3>
-      <ol class="lineage-track">
-        <li><span class="mono">2022</span><b>个人训练记录</b><em>Excel、Notion</em></li>
-        <li><span class="mono">2025.06</span><b>清华 SIGS 田径管理系统</b><em>Flask · 给田径队用</em></li>
-        <li><span class="mono">2025.08</span><b>Athletics Platform</b><em>Vue 3 · FastAPI</em></li>
-        <li><span class="mono">2025.10</span><b>AthleteOS</b><em>Flutter · OpenAPI</em></li>
-        <li class="now"><span class="mono">2026.08</span><b>Cadenvo</b><em>多智能体并行开发</em></li>
+    <!-- ===== 研发体系 ===== -->
+    <div class="t-sub"><h3>多智能体并行研发</h3><span>一个人同时带多个编程智能体，在同一个仓库里开发</span></div>
+
+    <div class="t-flow-wrap">
+      <ol class="t-flow">
+        <li><b>任务拆分</b>我把需求拆成可独立合并的小任务，每条写清验收标准和要过的门禁。</li>
+        <li><b>隔离开发</b>每条开发线有独立的 git worktree、分支和调试服务端口，互不干扰。</li>
+        <li><b>门禁先行</b>先写会失败的测试或检查，再让智能体修到通过；不许放宽门禁。</li>
+        <li><b>排队合并</b>合并、发布、数据库迁移、构建四类共享资源各有一把排队锁，只做快进合并，同时推两个远端。</li>
+        <li><b>截图验收</b>手机和桌面截图逐张看，问题退回对应开发线；通过后统一发布到截图画廊。</li>
       </ol>
+      <div class="t-code" aria-label="并行开发的一次事故和对应措施">
+        <div class="t-code-bar"><i></i><i></i><i></i><span>postmortem.log</span></div>
+        <pre><span class="c"># 事故：几个会话同时构建发布版</span>
+<span class="k">disk</span>   <span class="n">7.5 GB</span> → <span class="n">3.9 GB</span>   <span class="c"># 30 分钟内</span>
+
+<span class="c"># 措施</span>
+<span class="ok">+</span> 全局编译锁：同一时间只有一个在编译
+<span class="ok">+</span> 日常截图改用热重载调试服务，不构建发布版
+<span class="ok">+</span> 静态检查保证调试版 = 发布版画面
+<span class="ok">+</span> 调试服务最多 <span class="n">3</span> 个，磁盘低于 <span class="n">5 GB</span> 只改代码
+
+<span class="c"># 规模（主仓库，2026-08-22 起）</span>
+<span class="k">commits</span>     <span class="n">665</span>   <span class="c"># 约 7 周</span>
+<span class="k">tests</span>       <span class="n">378</span> 前端 + <span class="n">241</span> 后端
+<span class="k">screens</span>     <span class="n">310</span>   <span class="c"># uuid + 源码指纹</span></pre>
+      </div>
     </div>
+
+    <!-- ===== 其他项目 ===== -->
+    <div class="t-sub"><h3>其他项目</h3><span>公开仓库可直接查看，私有仓库可现场演示</span></div>
+
+    <div class="t-projects">
+      <article class="t-proj wide">
+        <div class="top"><span class="cat">AI 教育 · 全栈</span><span class="ev">私有 · 159 次提交</span></div>
+        <h4>鸿儒数字化教育 MVP</h4>
+        <p>拍照录题后，创建推理会话，前端通过事件流（SSE）实时接收六个分析阶段的结果，完成后回填知识图谱和诊断，再按需生成变式题。图谱主渲染用 WebView + G6，小程序里降级到原生 ECharts。OpenAPI 生成 SDK，契约有脚本校验。</p>
+        <div class="foot"><span class="stack">FastAPI · Vue 3 · uni-app · 微信小程序 · G6</span></div>
+      </article>
+      <article class="t-proj">
+        <div class="top"><span class="cat">工业软件</span><span class="ev">私有</span></div>
+        <h4>AIDCIS 管板孔智能检测</h4>
+        <p>核电设备管板孔检测桌面系统：DXF 导入与管孔可视化、扇形分区检测、实时监控、缺陷评定，导出 PDF / Excel / Word 报告。</p>
+        <div class="foot"><span class="stack">Python · PySide6 · DXF</span></div>
+      </article>
+
+      <article class="t-proj">
+        <div class="top"><span class="cat">开发者工具 · MCP</span><span class="ev">公开</span></div>
+        <h4>ProjectNavigatorMCP</h4>
+        <p>把 Git 仓库扫描成可查询的代码地图：文件、符号、导入、路由、测试和提交历史，智能体改代码前先查影响范围和该跑的测试。</p>
+        <div class="foot"><span class="stack">TypeScript · MCP · SQLite</span><a href="https://github.com/ValentinoWang/ProjectNavigatorMCP" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </article>
+      <article class="t-proj">
+        <div class="top"><span class="cat">开发者工具 · MCP</span><span class="ev">公开</span></div>
+        <h4>Control-PromotionMCP</h4>
+        <p>把反复出现的工程问题按生命周期升级：经验 → 文档或技能 → 静态检查 → 类型与契约约束 → 退役。确定性内核 + 只读 MCP 服务。</p>
+        <div class="foot"><span class="stack">Python · MCP</span><a href="https://github.com/ValentinoWang/Control-PromotionMCP" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </article>
+      <article class="t-proj">
+        <div class="top"><span class="cat">模型路由</span><span class="ev">公开</span></div>
+        <h4>codex-worker-tier-router</h4>
+        <p>把任务分成 L1–L4 四档，按通过率、耗时、成本加权打分，为每档挑选模型和推理强度，输出可审计的调用脚本。</p>
+        <div class="foot"><span class="stack">Shell</span><a href="https://github.com/ValentinoWang/codex-worker-tier-router" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </article>
+
+      <article class="t-proj">
+        <div class="top"><span class="cat">研发治理</span><span class="ev">私有 · 765 次提交</span></div>
+        <h4>Harness Engineering</h4>
+        <p>多个项目共用的 AI 协作规范、技能和门禁的唯一来源，按核心、技术栈、项目三层分发；本地 pre-commit 加 CI 全量检查，跳过的测试也算失败。</p>
+        <div class="foot"><span class="stack">Python · YAML · GitHub Actions</span></div>
+      </article>
+      <article class="t-proj">
+        <div class="top"><span class="cat">内容创作系统</span><span class="ev">私有 · 1,368 次提交</span></div>
+        <h4>OpenClaw Media</h4>
+        <p>自媒体创作与运营系统：选题、写稿、制作、发布复盘和商务合作。Monorepo 内业务线只能单向依赖共享层；终端素材只留在本机，云端拒收。</p>
+        <div class="foot"><span class="stack">Python · Web · Agent CLI</span></div>
+      </article>
+      <article class="t-proj">
+        <div class="top"><span class="cat">多模态流水线</span><span class="ev">公开</span></div>
+        <h4>Photo Content OS</h4>
+        <p>本地优先的素材到剪辑方案流水线：媒体扫描、分层取证、关键帧和转写、多模态摘要、脚本匹配、分镜和 EDL 剪辑交接包。</p>
+        <div class="foot"><span class="stack">Python · 多模态</span><a href="https://github.com/ValentinoWang/photo-content-os" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </article>
+
+      <article class="t-proj wide">
+        <div class="top"><span class="cat">计算机视觉研究</span><span class="ev">公开 · 3 篇论文</span></div>
+        <h4>工业视觉检测的迁移与安全更新</h4>
+        <p>表面缺陷检测的迁移学习：参与 Style Adaptation Module；研究迁移前的源域样本筛选（StyleFilter，基于风格空间距离挑选可迁移样本），以及目标数据采集失败时检测器的安全更新（按图像和语义证据决定保留或丢弃，风险过高时停止更新）。DANN 域对抗训练以零侵入方式接入 Ultralytics YOLO。</p>
+        <div class="foot"><span class="stack">PyTorch · YOLO · DANN · OpenCV</span><a href="https://github.com/ValentinoWang/Industrial_Visual_Inspection_Research" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </article>
+      <article class="t-proj">
+        <div class="top"><span class="cat">前端工具</span><span class="ev">公开</span></div>
+        <h4>Open Fronted Design</h4>
+        <p>可接入任意项目的前端修改工作台：页面树、实物与参考对比、候选生成、人工审核和交付记录，零 Node 依赖。</p>
+        <div class="foot"><span class="stack">原生 JS · Python</span><a href="https://github.com/ValentinoWang/Open_Fronted_Design" target="_blank" rel="noopener">GitHub ↗</a></div>
+      </article>
+    </div>
+
+    <!-- ===== 迭代 ===== -->
+    <div class="t-sub"><h3>同一个训练系统，做了五代</h3><span>每一代都换过技术栈，问题越做越清楚</span></div>
+    <ol class="t-line">
+      <li><span>2022</span><b>个人训练记录</b><em>表格记录自己的训练</em></li>
+      <li><span>2025.06</span><b>清华 SIGS 田径管理系统</b><em>Flask · 给田径队用</em></li>
+      <li><span>2025.08</span><b>Athletics Platform</b><em>Vue 3 · FastAPI · Docker · Playwright</em></li>
+      <li><span>2025.10</span><b>AthleteOS</b><em>Flutter · OpenAPI · 1,437 次提交</em></li>
+      <li class="now"><span>2026.08</span><b>Cadenvo</b><em>重新设计，多智能体并行开发</em></li>
+    </ol>
+
+    <p class="t-note">数字取自各 Git 仓库和代码统计，截至 2026 年 10 月 10 日。代码行数不含自动生成的文件。</p>
   </div>
 </section>
 
