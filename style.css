@@ -318,6 +318,11 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .captain { background: var(--night-2); border: 1px solid rgba(255,255,255,0.08); border-top: 3px solid var(--track); border-radius: 12px; padding: 24px; align-self: start; display: grid; gap: 10px; }
 .captain-role { font-family: var(--font-display); font-size: 21px; font-weight: 900; line-height: 1.45; }
 .captain-years { font-size: 12.5px; color: var(--led); }
+.captain-stats { margin: 6px 0 4px; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+.captain-stats div { background: var(--night); padding: 12px 12px 10px; display: grid; gap: 2px; align-content: start; }
+.captain-stats dd { margin: 0; font-size: 28px; font-weight: 700; line-height: 1.1; color: var(--led); }
+.captain-stats dd small { font-size: 0.5em; margin-left: 2px; color: var(--night-muted); }
+.captain-stats dt { font-size: 12.5px; color: var(--night-muted); line-height: 1.45; }
 .captain-list { margin: 4px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; font-size: 14.5px; }
 .captain-list li { padding-left: 14px; position: relative; }
 .captain-list li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 6px; height: 2px; background: #ef7a62; }
@@ -652,4 +657,7 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 @media (max-width: 640px) {
   .story-ch { grid-template-columns: minmax(0, 1fr); gap: 6px; }
   .ch-mark { grid-auto-flow: column; justify-content: start; align-items: baseline; gap: 10px; }
+}
+@media (max-width: 640px) {
+  .captain-stats dd { font-size: 22px; white-space: nowrap; }
 }
