@@ -20,9 +20,11 @@ filters.forEach((btn) => {
   });
 });
 
-// 奖项统计：按级别数条目
+// 奖项统计：按级别数奖项，一条里有几个奖项写在 data-n
 document.querySelectorAll('.aw-stats [data-l]').forEach((d) => {
-  d.querySelector('dd').textContent = document.querySelectorAll(`.years .lvl.${d.dataset.l}`).length;
+  let n = 0;
+  document.querySelectorAll(`.years .lvl.${d.dataset.l}`).forEach((tag) => { n += Number(tag.parentElement.dataset.n || 1); });
+  d.querySelector('dd').textContent = n;
 });
 
 // 导航高亮当前栏目
