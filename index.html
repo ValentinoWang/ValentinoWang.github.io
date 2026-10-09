@@ -156,8 +156,8 @@
   <div class="wrap">
     <div class="sec-head">
       <span class="sec-tag"><b class="mono">02</b>产品与技术</span>
-      <h2>从数据库到界面，再到让 AI 一起写代码的工程体系</h2>
-      <p>主线是自己发起的训练管理产品 Cadenvo：从需求、数据模型、后端服务、前端界面到测试和验收，全链路由我主导。围绕它，我搭了一套让多个 AI 编程智能体并行开发、又能被机器核实的研发体系，并把其中的工具单独开源。此前做过计算机视觉检测和工业桌面软件。</p>
+      <h2>产品、工具与研究</h2>
+      <p>做过大模型应用、全栈产品、AI 研发工具和计算机视觉研究。下面是可以公开的部分，公开仓库可以直接查看，私有项目可以现场演示。</p>
     </div>
 
     <!-- 能力四栏 -->
@@ -184,199 +184,8 @@
       </div>
     </div>
 
-    <!-- ===== Cadenvo ===== -->
-    <div class="t-sub"><h3>Cadenvo · 训练管理系统</h3><span>2026-08 至今 · 发起人、技术负责人</span></div>
-
-    <dl class="t-stats">
-      <div><dt>代码</dt><dd>22<small>万行</small></dd></div>
-      <div><dt>API 接口</dt><dd>335</dd></div>
-      <div><dt>数据模型</dt><dd>537</dd></div>
-      <div><dt>测试文件</dt><dd>619</dd></div>
-      <div><dt>数据库迁移</dt><dd>71</dd></div>
-      <div><dt>验收截图</dt><dd>310</dd></div>
-    </dl>
-    <p class="t-role">面向教练和运动员，覆盖计划、人员、执行记录、成绩分析和复盘，分教练、运动员、组织管理员、平台运营四个工作区。<b>我负责产品定义、数据模型与业务规则、任务拆分与验收标准，以及整套研发流程</b>；编码大量交给编程智能体并行完成。主仓库 665 次提交中 544 次由我提交。</p>
-
-  </div>
-
-  <div class="phones" tabindex="0" aria-label="Cadenvo 页面截图，可横向滚动">
-    <figure class="phone">
-      <div class="phone-frame"><img src="assets/app-import.jpg" alt="教练把一周训练计划粘贴进来，由 AI 整理后确认" width="531" height="1100" loading="lazy"></div>
-      <figcaption><b>AI 导入计划</b>粘贴文字或 Excel，AI 整理成逐日课程，再逐条确认</figcaption>
-    </figure>
-    <figure class="phone">
-      <div class="phone-frame"><img src="assets/app-cycle.jpg" alt="小周期总览，显示本周训练强度节奏和执行情况" width="531" height="1100" loading="lazy"></div>
-      <figcaption><b>小周期总览</b>一周的强度节奏、名单和执行情况</figcaption>
-    </figure>
-    <figure class="phone">
-      <div class="phone-frame"><img src="assets/app-athlete.jpg" alt="运动员端今天的训练" width="531" height="1100" loading="lazy"></div>
-      <figcaption><b>运动员的今天</b>教练发布的课程和自主训练放在一起</figcaption>
-    </figure>
-    <figure class="phone">
-      <div class="phone-frame"><img src="assets/app-execution.jpg" alt="训练执行页，杠铃深蹲第一组 60 千克" width="531" height="1100" loading="lazy"></div>
-      <figcaption><b>训练执行</b>一组一组记录重量和实际完成次数</figcaption>
-    </figure>
-  </div>
-
-  <div class="wrap">
-    <p class="phones-note">截图来自 Cadenvo 的验收画廊，使用演示数据。</p>
-
-    <figure class="t-arch">
-      <svg viewBox="0 0 1040 330" role="img" aria-labelledby="arch-t">
-        <title id="arch-t">Cadenvo 系统架构：Flutter Web 前端通过自动生成的 Dart SDK 调用 FastAPI，后端连接 PostgreSQL 和后台任务进程，任务进程调用大模型和 OCR</title>
-        <defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0 L10 5 L0 10 z" class="s-a"/></marker></defs>
-
-        <rect x="6" y="6" width="236" height="318" rx="10" class="s-lane"/>
-        <text x="20" y="28" class="s-lab">CLIENT</text>
-        <rect x="22" y="44" width="204" height="70" rx="8" class="s-box"/>
-        <text x="38" y="70" class="s-t">Flutter Web</text>
-        <text x="38" y="92" class="s-s">教练 · 运动员 · 组织 · 平台</text>
-        <rect x="22" y="132" width="204" height="62" rx="8" class="s-box"/>
-        <text x="38" y="158" class="s-t">设计系统 + 门禁</text>
-        <text x="38" y="178" class="s-m">check.dart · widget tests</text>
-        <rect x="22" y="212" width="204" height="96" rx="8" class="s-acc"/>
-        <text x="38" y="238" class="s-t">生成的 Dart SDK</text>
-        <text x="38" y="260" class="s-s">只能调用后端真实存在的</text>
-        <text x="38" y="278" class="s-s">接口和字段</text>
-
-        <rect x="286" y="6" width="420" height="318" rx="10" class="s-lane"/>
-        <text x="300" y="28" class="s-lab">SERVER</text>
-        <rect x="302" y="44" width="388" height="70" rx="8" class="s-box"/>
-        <text x="318" y="70" class="s-t">FastAPI · 62 个路由模块</text>
-        <text x="318" y="92" class="s-s">JWT 鉴权 · 组织多租户 · 敏感字段 Fernet 加密</text>
-        <rect x="302" y="132" width="186" height="80" rx="8" class="s-acc"/>
-        <text x="318" y="158" class="s-t">OpenAPI 3</text>
-        <text x="318" y="180" class="s-m">335 paths</text>
-        <text x="318" y="198" class="s-m">537 schemas</text>
-        <rect x="504" y="132" width="186" height="80" rx="8" class="s-box"/>
-        <text x="520" y="158" class="s-t">领域服务</text>
-        <text x="520" y="180" class="s-s">计划编译 · 成绩可比性</text>
-        <text x="520" y="198" class="s-s">名称对齐 · 发布检查</text>
-        <rect x="302" y="230" width="388" height="78" rx="8" class="s-box"/>
-        <text x="318" y="256" class="s-t">后台任务进程</text>
-        <text x="318" y="278" class="s-m">FOR UPDATE SKIP LOCKED + 租约</text>
-        <text x="318" y="296" class="s-s">计划整理 · OCR 识别 · 批量发布 · 测评报告</text>
-
-        <rect x="750" y="6" width="284" height="318" rx="10" class="s-lane"/>
-        <text x="764" y="28" class="s-lab">DATA &amp; AI</text>
-        <rect x="766" y="44" width="252" height="70" rx="8" class="s-box"/>
-        <text x="782" y="70" class="s-t">PostgreSQL</text>
-        <text x="782" y="92" class="s-m">SQLAlchemy 2 · Alembic ×71</text>
-        <rect x="766" y="132" width="252" height="80" rx="8" class="s-acc"/>
-        <text x="782" y="158" class="s-t">大模型（OpenAI 兼容）</text>
-        <text x="782" y="180" class="s-s">JSON Schema 结构化输出</text>
-        <text x="782" y="198" class="s-s">流式进度 · 用量计量</text>
-        <rect x="766" y="230" width="252" height="78" rx="8" class="s-box"/>
-        <text x="782" y="256" class="s-t">OCR 管线</text>
-        <text x="782" y="278" class="s-s">OpenCV 预处理 · 两遍识别</text>
-        <text x="782" y="296" class="s-s">可断点续跑</text>
-
-        <path d="M226 260 H264 V79 H296" class="s-e" marker-end="url(#ah)"/>
-        <path d="M395 132 V120" class="s-e"/>
-        <path d="M302 172 H276 V290 H232" class="s-e" marker-end="url(#ah)"/>
-        <text x="236" y="284" class="s-m">gen</text>
-        <path d="M690 79 H760" class="s-e" marker-end="url(#ah)"/>
-        <path d="M690 269 H720 V172 H760" class="s-e" marker-end="url(#ah)"/>
-        <path d="M720 269 H760" class="s-e" marker-end="url(#ah)"/>
-        <path d="M597 212 V224" class="s-e" marker-end="url(#ah)"/>
-      </svg>
-      <ol class="t-arch-list">
-        <li><span class="mono">CLIENT</span><b>Flutter Web</b>教练 · 运动员 · 组织 · 平台四个工作区；设计系统和门禁；调用自动生成的 Dart SDK</li>
-        <li><span class="mono">CONTRACT</span><b>OpenAPI 3</b>335 个接口、537 个数据模型，生成前端客户端</li>
-        <li><span class="mono">SERVER</span><b>FastAPI · 62 个路由模块</b>JWT 鉴权、组织多租户、敏感字段加密；领域服务；后台任务进程（SKIP LOCKED + 租约）</li>
-        <li><span class="mono">DATA &amp; AI</span><b>PostgreSQL · 大模型 · OCR</b>Alembic 71 次迁移；JSON Schema 结构化输出、流式进度；OCR 可断点续跑</li>
-      </ol>
-      <figcaption>系统架构。紫色框是对外契约和模型调用这两个最需要约束的边界。</figcaption>
-    </figure>
-
-    <div class="t-sub"><h3>技术要点</h3><span>每条都对应仓库里的实际实现</span></div>
-
-    <div class="t-deep">
-      <article class="t-card">
-        <span class="k">LLM · STRUCTURED OUTPUT</span>
-        <h4>大模型整理训练计划：模型负责理解，规则负责定案</h4>
-        <dl>
-          <dt>问题</dt><dd>教练的计划写法五花八门：文字、Excel、拍照。直接信任模型输出，动作名会被「意译」，结果不可复现。</dd>
-          <dt>做法</dt><dd>按动作库和指标动态生成 JSON Schema 约束输出，再用 Pydantic 校验；动作名先走确定性对齐（库内名称、审核过的别名、教练自己确认过的叫法），模型只补语义匹配。对不上的标为「可补充」，不阻塞导入。</dd>
-          <dt>结果</dt><dd>同一输入得到稳定的动作归属，对齐逻辑可以单测；模型调用走 OpenAI 兼容接口，换供应商不改业务代码。</dd>
-        </dl>
-      </article>
-      <article class="t-card">
-        <span class="k">STREAMING · UX</span>
-        <h4>流式输出，但校验逻辑一行不改</h4>
-        <dl>
-          <dt>问题</dt><dd>整理一周计划要几十秒，教练只看到转圈；改成流式又怕绕过已有的结构化校验。</dd>
-          <dt>做法</dt><dd>把流式分片重新拼回非流式的响应结构，校验照旧执行；进度模块只「旁观」不完整的 JSON，告诉教练哪几天已经整理好。</dd>
-          <dt>结果</dt><dd>等待期间能看到逐日进度，正确性仍只由一条校验路径决定。</dd>
-        </dl>
-      </article>
-      <article class="t-card">
-        <span class="k">POSTGRES · JOB QUEUE</span>
-        <h4>不引入消息队列的可靠后台任务</h4>
-        <dl>
-          <dt>问题</dt><dd>计划整理、OCR、批量发布都是慢任务，进程可能中途退出，多个进程不能重复处理同一任务。</dd>
-          <dt>做法</dt><dd>任务表直接放在 PostgreSQL，用 <code>SELECT … FOR UPDATE SKIP LOCKED</code> 认领，加处理租约，租约过期自动回收；模型请求指数退避重试，区分可重试和不可重试错误。OCR 分两遍识别，只有模型调用并发，数据库写入串行，可从中断处续跑。</dd>
-          <dt>结果</dt><dd>少一套中间件，部署和排障简单，任务不丢也不重复。</dd>
-        </dl>
-      </article>
-      <article class="t-card">
-        <span class="k">DOMAIN MODEL</span>
-        <h4>成绩「能一起查」不等于「能一起比」</h4>
-        <dl>
-          <dt>问题</dt><dd>同一项 100 米，手计和电计、顺风和逆风混在一起算最好成绩和趋势，结论就是错的。</dd>
-          <dt>做法</dt><dd>每种测试方法声明必须已知且一致的条件；分类条件按取值分组（「未知」单独成组），风速这类连续值只作筛选属性，不进入分组键；方法版本也参与分组。</dd>
-          <dt>结果</dt><dd>最好成绩和趋势只在可比的记录之间计算，规则集中在一个模块里，有单元测试覆盖。</dd>
-        </dl>
-      </article>
-      <article class="t-card">
-        <span class="k">CONTRACT</span>
-        <h4>前后端契约自动生成，字段对不上编译就失败</h4>
-        <dl>
-          <dt>做法</dt><dd>后端导出 OpenAPI，自动生成 Dart 客户端；前端只能通过它访问数据。数据库变更全部走 Alembic 迁移。</dd>
-          <dt>结果</dt><dd>接口改名、删字段在前端编译期暴露，而不是上线后才发现。</dd>
-        </dl>
-      </article>
-      <article class="t-card">
-        <span class="k">QUALITY GATES</span>
-        <h4>每个界面问题先写成会失败的门禁</h4>
-        <dl>
-          <dt>做法</dt><dd>问题先变成 widget 测试或设计系统静态检查，确认在当前代码上失败，再修到通过。例如禁止按构建模式分支、禁止把类型名渲染成文字、禁止非常量图标，保证调试版和发布版画面一致；日期格式、术语也有专门检查。</dd>
-          <dt>结果</dt><dd>同类问题不会第二次出现；310 张截图带源码指纹，没拍到最新代码的截图无法发布。</dd>
-        </dl>
-      </article>
-    </div>
-
-    <!-- ===== 研发体系 ===== -->
-    <div class="t-sub"><h3>多智能体并行研发</h3><span>一个人同时带多个编程智能体，在同一个仓库里开发</span></div>
-
-    <div class="t-flow-wrap">
-      <ol class="t-flow">
-        <li><b>任务拆分</b>我把需求拆成可独立合并的小任务，每条写清验收标准和要过的门禁。</li>
-        <li><b>隔离开发</b>每条开发线有独立的 git worktree、分支和调试服务端口，互不干扰。</li>
-        <li><b>门禁先行</b>先写会失败的测试或检查，再让智能体修到通过；不许放宽门禁。</li>
-        <li><b>排队合并</b>合并、发布、数据库迁移、构建四类共享资源各有一把排队锁，只做快进合并，同时推两个远端。</li>
-        <li><b>截图验收</b>手机和桌面截图逐张看，问题退回对应开发线；通过后统一发布到截图画廊。</li>
-      </ol>
-      <div class="t-code" aria-label="并行开发的一次事故和对应措施">
-        <div class="t-code-bar"><i></i><i></i><i></i><span>postmortem.log</span></div>
-        <pre><span class="c"># 事故：几个会话同时构建发布版</span>
-<span class="k">disk</span>   <span class="n">7.5 GB</span> → <span class="n">3.9 GB</span>   <span class="c"># 30 分钟内</span>
-
-<span class="c"># 措施</span>
-<span class="ok">+</span> 全局编译锁：同一时间只有一个在编译
-<span class="ok">+</span> 日常截图改用热重载调试服务，不构建发布版
-<span class="ok">+</span> 静态检查保证调试版 = 发布版画面
-<span class="ok">+</span> 调试服务最多 <span class="n">3</span> 个，磁盘低于 <span class="n">5 GB</span> 只改代码
-
-<span class="c"># 规模（主仓库，2026-08-22 起）</span>
-<span class="k">commits</span>     <span class="n">665</span>   <span class="c"># 约 7 周</span>
-<span class="k">tests</span>       <span class="n">378</span> 前端 + <span class="n">241</span> 后端
-<span class="k">screens</span>     <span class="n">310</span>   <span class="c"># uuid + 源码指纹</span></pre>
-      </div>
-    </div>
-
     <!-- ===== 其他项目 ===== -->
-    <div class="t-sub"><h3>其他项目</h3><span>公开仓库可直接查看，私有仓库可现场演示</span></div>
+    <div class="t-sub"><h3>项目</h3><span>公开仓库可直接查看，私有仓库可现场演示</span></div>
 
     <div class="t-projects">
       <article class="t-proj wide">
@@ -444,17 +253,6 @@
       </article>
     </div>
 
-    <!-- ===== 迭代 ===== -->
-    <div class="t-sub"><h3>同一个训练系统，做了五代</h3><span>每一代都换过技术栈，问题越做越清楚</span></div>
-    <ol class="t-line">
-      <li><span>2022</span><b>个人训练记录</b><em>表格记录自己的训练</em></li>
-      <li><span>2025.06</span><b>清华 SIGS 田径管理系统</b><em>Flask · 给田径队用</em></li>
-      <li><span>2025.08</span><b>Athletics Platform</b><em>Vue 3 · FastAPI · Docker · Playwright</em></li>
-      <li><span>2025.10</span><b>AthleteOS</b><em>Flutter · OpenAPI<br>1,437 次提交</em></li>
-      <li class="now"><span>2026.08</span><b>Cadenvo</b><em>重新设计，多智能体并行开发</em></li>
-    </ol>
-
-    <p class="t-note">数字取自各 Git 仓库和代码统计，截至 2026 年 10 月 10 日。代码行数不含自动生成的文件。</p>
   </div>
 </section>
 
