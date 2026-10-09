@@ -238,6 +238,7 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .m-e { grid-column: span 2; grid-row: span 3; }
 .m-e img { object-position: 50% 20%; }
 .m-f { grid-column: span 2; grid-row: span 3; }
+.m-f img { object-position: 45% 30%; }
 .m-g { grid-column: span 2; grid-row: span 3; }
 .m-h { grid-column: span 6; grid-row: span 3; }
 .m-h img { object-position: 50% 60%; }
@@ -328,6 +329,7 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .year-shots figure:first-child { grid-column: 1 / -1; }
 .year-shots figure:only-child img, .year-shots figure:first-child img { aspect-ratio: 16 / 10; }
 .year-shots figure { margin: 0; }
+.year-shots figure.tall img { aspect-ratio: 4 / 5; object-position: 50% 40%; }
 .year-shots img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; object-position: 50% 30%; border-radius: 10px; }
 .year-shots figcaption { font-size: 13.5px; color: var(--muted); margin-top: 6px; line-height: 1.45; }
 .sec-awards .wrap { max-width: 1240px; }
