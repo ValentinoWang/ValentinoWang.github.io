@@ -240,6 +240,12 @@
         <path d="M720 269 H760" class="s-e" marker-end="url(#ah)"/>
         <path d="M597 212 V224" class="s-e" marker-end="url(#ah)"/>
       </svg>
+      <ol class="t-arch-list">
+        <li><span class="mono">CLIENT</span><b>Flutter Web</b>教练 · 运动员 · 组织 · 平台四个工作区；设计系统和门禁；调用自动生成的 Dart SDK</li>
+        <li><span class="mono">CONTRACT</span><b>OpenAPI 3</b>335 个接口、537 个数据模型，生成前端客户端</li>
+        <li><span class="mono">SERVER</span><b>FastAPI · 62 个路由模块</b>JWT 鉴权、组织多租户、敏感字段加密；领域服务；后台任务进程（SKIP LOCKED + 租约）</li>
+        <li><span class="mono">DATA &amp; AI</span><b>PostgreSQL · 大模型 · OCR</b>Alembic 71 次迁移；JSON Schema 结构化输出、流式进度；OCR 可断点续跑</li>
+      </ol>
       <figcaption>系统架构。紫色框是对外契约和模型调用这两个最需要约束的边界。</figcaption>
     </figure>
 
@@ -337,64 +343,64 @@
         <div class="top"><span class="cat">AI 教育 · 全栈</span><span class="ev">私有 · 159 次提交</span></div>
         <h4>鸿儒数字化教育 MVP</h4>
         <p>拍照录题后，创建推理会话，前端通过事件流（SSE）实时接收六个分析阶段的结果，完成后回填知识图谱和诊断，再按需生成变式题。图谱主渲染用 WebView + G6，小程序里降级到原生 ECharts。OpenAPI 生成 SDK，契约有脚本校验。</p>
-        <div class="foot"><span class="stack">FastAPI · Vue 3 · uni-app · 微信小程序 · G6</span></div>
+        <div class="t-proj-foot"><span class="stack">FastAPI · Vue 3 · uni-app · 微信小程序 · G6</span></div>
       </article>
       <article class="t-proj">
         <div class="top"><span class="cat">工业软件</span><span class="ev">私有</span></div>
         <h4>AIDCIS 管板孔智能检测</h4>
         <p>核电设备管板孔检测桌面系统：DXF 导入与管孔可视化、扇形分区检测、实时监控、缺陷评定，导出 PDF / Excel / Word 报告。</p>
-        <div class="foot"><span class="stack">Python · PySide6 · DXF</span></div>
+        <div class="t-proj-foot"><span class="stack">Python · PySide6 · DXF</span></div>
       </article>
 
       <article class="t-proj">
         <div class="top"><span class="cat">开发者工具 · MCP</span><span class="ev">公开</span></div>
         <h4>ProjectNavigatorMCP</h4>
         <p>把 Git 仓库扫描成可查询的代码地图：文件、符号、导入、路由、测试和提交历史，智能体改代码前先查影响范围和该跑的测试。</p>
-        <div class="foot"><span class="stack">TypeScript · MCP · SQLite</span><a href="https://github.com/ValentinoWang/ProjectNavigatorMCP" target="_blank" rel="noopener">GitHub ↗</a></div>
+        <div class="t-proj-foot"><span class="stack">TypeScript · MCP · SQLite</span><a href="https://github.com/ValentinoWang/ProjectNavigatorMCP" target="_blank" rel="noopener">GitHub ↗</a></div>
       </article>
       <article class="t-proj">
         <div class="top"><span class="cat">开发者工具 · MCP</span><span class="ev">公开</span></div>
         <h4>Control-PromotionMCP</h4>
         <p>把反复出现的工程问题按生命周期升级：经验 → 文档或技能 → 静态检查 → 类型与契约约束 → 退役。确定性内核 + 只读 MCP 服务。</p>
-        <div class="foot"><span class="stack">Python · MCP</span><a href="https://github.com/ValentinoWang/Control-PromotionMCP" target="_blank" rel="noopener">GitHub ↗</a></div>
+        <div class="t-proj-foot"><span class="stack">Python · MCP</span><a href="https://github.com/ValentinoWang/Control-PromotionMCP" target="_blank" rel="noopener">GitHub ↗</a></div>
       </article>
       <article class="t-proj">
         <div class="top"><span class="cat">模型路由</span><span class="ev">公开</span></div>
         <h4>codex-worker-tier-router</h4>
         <p>把任务分成 L1–L4 四档，按通过率、耗时、成本加权打分，为每档挑选模型和推理强度，输出可审计的调用脚本。</p>
-        <div class="foot"><span class="stack">Shell</span><a href="https://github.com/ValentinoWang/codex-worker-tier-router" target="_blank" rel="noopener">GitHub ↗</a></div>
+        <div class="t-proj-foot"><span class="stack">Shell</span><a href="https://github.com/ValentinoWang/codex-worker-tier-router" target="_blank" rel="noopener">GitHub ↗</a></div>
       </article>
 
       <article class="t-proj">
         <div class="top"><span class="cat">研发治理</span><span class="ev">私有 · 765 次提交</span></div>
         <h4>Harness Engineering</h4>
         <p>多个项目共用的 AI 协作规范、技能和门禁的唯一来源，按核心、技术栈、项目三层分发；本地 pre-commit 加 CI 全量检查，跳过的测试也算失败。</p>
-        <div class="foot"><span class="stack">Python · YAML · GitHub Actions</span></div>
+        <div class="t-proj-foot"><span class="stack">Python · YAML · GitHub Actions</span></div>
       </article>
       <article class="t-proj">
         <div class="top"><span class="cat">内容创作系统</span><span class="ev">私有 · 1,368 次提交</span></div>
         <h4>OpenClaw Media</h4>
         <p>自媒体创作与运营系统：选题、写稿、制作、发布复盘和商务合作。Monorepo 内业务线只能单向依赖共享层；终端素材只留在本机，云端拒收。</p>
-        <div class="foot"><span class="stack">Python · Web · Agent CLI</span></div>
+        <div class="t-proj-foot"><span class="stack">Python · Web · Agent CLI</span></div>
       </article>
       <article class="t-proj">
         <div class="top"><span class="cat">多模态流水线</span><span class="ev">公开</span></div>
         <h4>Photo Content OS</h4>
         <p>本地优先的素材到剪辑方案流水线：媒体扫描、分层取证、关键帧和转写、多模态摘要、脚本匹配、分镜和 EDL 剪辑交接包。</p>
-        <div class="foot"><span class="stack">Python · 多模态</span><a href="https://github.com/ValentinoWang/photo-content-os" target="_blank" rel="noopener">GitHub ↗</a></div>
+        <div class="t-proj-foot"><span class="stack">Python · 多模态</span><a href="https://github.com/ValentinoWang/photo-content-os" target="_blank" rel="noopener">GitHub ↗</a></div>
       </article>
 
       <article class="t-proj wide">
         <div class="top"><span class="cat">计算机视觉研究</span><span class="ev">公开 · 3 篇论文</span></div>
         <h4>工业视觉检测的迁移与安全更新</h4>
         <p>表面缺陷检测的迁移学习：参与 Style Adaptation Module；研究迁移前的源域样本筛选（StyleFilter，基于风格空间距离挑选可迁移样本），以及目标数据采集失败时检测器的安全更新（按图像和语义证据决定保留或丢弃，风险过高时停止更新）。DANN 域对抗训练以零侵入方式接入 Ultralytics YOLO。</p>
-        <div class="foot"><span class="stack">PyTorch · YOLO · DANN · OpenCV</span><a href="https://github.com/ValentinoWang/Industrial_Visual_Inspection_Research" target="_blank" rel="noopener">GitHub ↗</a></div>
+        <div class="t-proj-foot"><span class="stack">PyTorch · YOLO · DANN · OpenCV</span><a href="https://github.com/ValentinoWang/Industrial_Visual_Inspection_Research" target="_blank" rel="noopener">GitHub ↗</a></div>
       </article>
       <article class="t-proj">
         <div class="top"><span class="cat">前端工具</span><span class="ev">公开</span></div>
         <h4>Open Fronted Design</h4>
         <p>可接入任意项目的前端修改工作台：页面树、实物与参考对比、候选生成、人工审核和交付记录，零 Node 依赖。</p>
-        <div class="foot"><span class="stack">原生 JS · Python</span><a href="https://github.com/ValentinoWang/Open_Fronted_Design" target="_blank" rel="noopener">GitHub ↗</a></div>
+        <div class="t-proj-foot"><span class="stack">原生 JS · Python</span><a href="https://github.com/ValentinoWang/Open_Fronted_Design" target="_blank" rel="noopener">GitHub ↗</a></div>
       </article>
     </div>
 
@@ -404,7 +410,7 @@
       <li><span>2022</span><b>个人训练记录</b><em>表格记录自己的训练</em></li>
       <li><span>2025.06</span><b>清华 SIGS 田径管理系统</b><em>Flask · 给田径队用</em></li>
       <li><span>2025.08</span><b>Athletics Platform</b><em>Vue 3 · FastAPI · Docker · Playwright</em></li>
-      <li><span>2025.10</span><b>AthleteOS</b><em>Flutter · OpenAPI · 1,437 次提交</em></li>
+      <li><span>2025.10</span><b>AthleteOS</b><em>Flutter · OpenAPI<br>1,437 次提交</em></li>
       <li class="now"><span>2026.08</span><b>Cadenvo</b><em>重新设计，多智能体并行开发</em></li>
     </ol>
 
