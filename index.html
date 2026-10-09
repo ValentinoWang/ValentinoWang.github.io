@@ -60,7 +60,7 @@
     <div class="sec-head">
       <span class="sec-tag"><b class="mono">01</b>教育背景</span>
       <h2>从数学到人工智能</h2>
-      <p>数学是我的老本行。后来做 AI、做研究、分析训练数据，用的都是本科打下的底子。</p>
+      <p>本科学的是数学。后来做视觉检测、研究开放问题、分析自己的训练数据，最常用的还是那几年练出来的习惯：先把问题拆小，再找能确定的部分。</p>
     </div>
 
     <div class="edu-layout">
@@ -157,7 +157,7 @@
     <div class="sec-head">
       <span class="sec-tag"><b class="mono">02</b>产品与技术</span>
       <h2>产品、工具与研究</h2>
-      <p>这几年做的东西大概分四类。下面列的是能公开的部分，带 GitHub 链接的可以直接看代码，没开源的见面可以打开给你看。</p>
+      <p>我做的东西，多半是先给自己用的：训练系统是因为没有教练，自媒体系统是因为一个人做账号忙不过来，那几个开发工具是让 AI 写代码时踩坑踩出来的。带 GitHub 链接的可以直接看代码，没开源的见面可以打开演示。</p>
     </div>
 
     <!-- 能力四栏 -->
@@ -174,7 +174,7 @@
       </div>
       <div class="t-skill">
         <h3>AI 研发效能</h3>
-        <p>让几个 AI 编程助手同时在一个仓库里干活，靠自动检查把住质量。其中几个工具已经开源。</p>
+        <p>几个 AI 编程助手同时改一个仓库，质量靠自动检查把关。配套的几个工具已经开源。</p>
         <div class="t-chips"><span>Codex</span><span>Claude Code</span><span>MCP</span><span>CI</span></div>
       </div>
       <div class="t-skill">
@@ -216,51 +216,51 @@
       <article class="t-proj wide">
         <div class="top"><span class="cat">AI 教育 · 全栈</span><span class="ev">私有 · 159 次提交</span></div>
         <h4>鸿儒数字化教育 MVP</h4>
-        <p>学生拍一道题上传，系统分六步分析，每一步的结果边算边推到页面上，最后画出知识点图谱、给出诊断，还能再出几道变式题。网页和微信小程序都做了。</p>
+        <p>学生拍一道题上传，系统分六步分析。完整分析要等一阵，所以每一步算完就先推给学生看；最后画出知识点图谱、给出诊断，再出几道变式题。网页和微信小程序都做了。</p>
         <div class="t-proj-foot"><span class="stack">FastAPI · Vue 3 · uni-app · 微信小程序 · G6</span></div>
       </article>
       <article class="t-proj">
         <div class="top"><span class="cat">工业软件</span><span class="ev">私有</span></div>
         <h4>AIDCIS 管板孔智能检测</h4>
-        <p>给核电设备做的管板孔检测软件：导入图纸，按区域逐个检测孔，实时看数据，判定缺陷，最后一键出报告。</p>
+        <p>给核电设备做的管板孔检测软件。从导入图纸、按区域逐个检测、实时看数据、判定缺陷，到最后出报告，都在一个软件里完成。</p>
         <div class="t-proj-foot"><span class="stack">Python · PySide6 · DXF</span></div>
       </article>
 
       <article class="t-proj">
         <div class="top"><span class="cat">开发者工具 · MCP</span><span class="ev">公开</span></div>
         <h4>ProjectNavigatorMCP</h4>
-        <p>AI 改代码之前，先让它查一张代码地图：这个函数在哪，谁在调用它，改了会影响哪些测试。</p>
+        <p>AI 改代码时常常找错文件、漏掉受影响的测试。所以先给它一张代码地图：这个函数在哪，谁在调用，改了要跑哪些测试。</p>
         <div class="t-proj-foot"><span class="stack">TypeScript · MCP · SQLite</span><a href="https://github.com/ValentinoWang/ProjectNavigatorMCP" target="_blank" rel="noopener">GitHub ↗</a></div>
       </article>
       <article class="t-proj">
         <div class="top"><span class="cat">开发者工具 · MCP</span><span class="ev">公开</span></div>
         <h4>Control-PromotionMCP</h4>
-        <p>同一个坑踩第二次，就把它升级成规则：先写进文档，再变成自动检查，最后从类型上直接杜绝。</p>
+        <p>同样的错误，AI 会一犯再犯，在提示词里多叮嘱一句没什么用。所以同一个坑踩到第二次，就把它升级：写进文档，变成自动检查，最后从类型上杜绝。</p>
         <div class="t-proj-foot"><span class="stack">Python · MCP</span><a href="https://github.com/ValentinoWang/Control-PromotionMCP" target="_blank" rel="noopener">GitHub ↗</a></div>
       </article>
       <article class="t-proj">
         <div class="top"><span class="cat">模型路由</span><span class="ev">公开</span></div>
         <h4>codex-worker-tier-router</h4>
-        <p>不同难度的活交给不同的模型。按通过率、速度和花费给模型打分，每档任务自动挑最划算的那个。</p>
+        <p>不是每件事都值得用最贵的模型。按通过率、速度和花费给模型打分：简单的活交给又快又便宜的，关键评审才用最强的。</p>
         <div class="t-proj-foot"><span class="stack">Shell</span><a href="https://github.com/ValentinoWang/codex-worker-tier-router" target="_blank" rel="noopener">GitHub ↗</a></div>
       </article>
 
       <article class="t-proj">
         <div class="top"><span class="cat">研发治理</span><span class="ev">私有 · 765 次提交</span></div>
         <h4>Harness Engineering</h4>
-        <p>我所有项目共用的一套 AI 协作规则和检查脚本，放在一处维护，各个项目引用同一份，改一次处处生效。</p>
+        <p>项目一多，同一条规则会在几个仓库里各写一份，时间长了就对不上。所以把 AI 协作规则和检查脚本集中到一处，各项目引用同一份。</p>
         <div class="t-proj-foot"><span class="stack">Python · YAML · GitHub Actions</span></div>
       </article>
       <article class="t-proj">
         <div class="top"><span class="cat">内容创作系统</span><span class="ev">私有 · 1,368 次提交</span></div>
         <h4>OpenClaw Media</h4>
-        <p>我自己做自媒体用的系统：选题、写稿、拍摄、剪辑、发布和复盘都在里面。原始素材只存在本机，不传到云端。</p>
+        <p>我自己的账号就在用。选题、写稿、拍摄、剪辑、发布和复盘放在一个系统里；原始素材只留在本机，不传云端。</p>
         <div class="t-proj-foot"><span class="stack">Python · Web · Agent CLI</span></div>
       </article>
       <article class="t-proj">
         <div class="top"><span class="cat">多模态流水线</span><span class="ev">公开</span></div>
         <h4>Photo Content OS</h4>
-        <p>把一大堆照片和视频整理成剪辑方案：自动看画面、听台词，对照脚本挑镜头，最后导出给剪辑软件。</p>
+        <p>素材一多，找镜头比剪辑还费时间。它先看画面、听台词，再对照脚本挑出合适的片段，最后导出给剪辑软件。</p>
         <div class="t-proj-foot"><span class="stack">Python · 多模态</span><a href="https://github.com/ValentinoWang/photo-content-os" target="_blank" rel="noopener">GitHub ↗</a></div>
       </article>
 
@@ -273,7 +273,7 @@
       <article class="t-proj">
         <div class="top"><span class="cat">前端工具</span><span class="ev">公开</span></div>
         <h4>Open Fronted Design</h4>
-        <p>改前端用的工作台：把真实页面、设计稿和参考图摆在一起对比，AI 出几版方案，人来挑。</p>
+        <p>改前端时，最难的是说清楚哪里不对。把真实页面、设计稿和参考图摆在一起，问题一眼就能看出来；再让 AI 出几版方案，人来挑。</p>
         <div class="t-proj-foot"><span class="stack">原生 JS · Python</span><a href="https://github.com/ValentinoWang/Open_Fronted_Design" target="_blank" rel="noopener">GitHub ↗</a></div>
       </article>
     </div>
@@ -379,7 +379,7 @@
     <div class="sec-head">
       <span class="sec-tag"><b class="mono">04</b>体育</span>
       <h2>七年短跑，从运动员到组队的人</h2>
-      <p>我不是体育特长生，大一才第一次正经跑 100 米。到现在练了七年，中间在清华深圳把田径队拉了起来。</p>
+      <p>我不是体育特长生，大一才第一次正经跑 100 米，12.08。七年后是 11.04，快了 1.04 秒。这一秒多是怎么来的，只有我自己的训练记录说得清，这也是后来想做训练系统的原因。</p>
     </div>
 
     <div class="board" role="table" aria-label="个人最好成绩">
@@ -498,7 +498,7 @@
     <div class="sec-head">
       <span class="sec-tag"><b class="mono">05</b>传播</span>
       <h2>把跑道、校园和 AI 讲给更多人听</h2>
-      <p>账号的主角就是我自己：一个业余短跑运动员，在清华读书、训练、创业。也做 AI 科普，2025 年春节那几条 DeepSeek 视频播放最高。选题、写稿、拍摄、出镜、剪辑都是一个人来。</p>
+      <p>账号的主角就是我自己：一个业余短跑运动员，在清华读书、训练、创业。播放最高的反而是 AI 科普：2025 年春节 DeepSeek 刚火的时候，我录了怎么用、怎么本地部署，最高一条 377.5 万。选题、写稿、拍摄、出镜、剪辑都是我一个人。</p>
     </div>
 
     <dl class="kit-stats">
