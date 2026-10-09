@@ -20,6 +20,11 @@ filters.forEach((btn) => {
   });
 });
 
+// 奖项统计：按级别数条目
+document.querySelectorAll('.aw-stats [data-l]').forEach((d) => {
+  d.querySelector('dd').textContent = document.querySelectorAll(`.years .lvl.${d.dataset.l}`).length;
+});
+
 // 导航高亮当前栏目
 const links = new Map(
   [...document.querySelectorAll('.navlinks a')].map((a) => [a.getAttribute('href').slice(1), a])
