@@ -169,7 +169,6 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .t-chips span { font-family: var(--font-mono); font-size: 11.5px; padding: 1px 7px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
 
 /* ---------- 子标题 ---------- */
-.t-story { margin: 0 0 18px; color: var(--muted); max-width: 46em; }
 .t-sub { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin: 72px 0 20px; }
 .t-sub h3 { font-size: 24px; font-weight: 800; }
 .t-sub span { font-size: 14px; color: var(--muted); }

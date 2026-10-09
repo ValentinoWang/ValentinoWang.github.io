@@ -33,18 +33,36 @@ if (awLayout) {
   const panel = document.createElement('aside');
   panel.className = 'aw-panel';
   panel.setAttribute('aria-label', '当年照片');
+  // 年份 → 照片组。带 data-panel 的几年共用一组，照片按这几年的总滚动距离平均展开
   const groups = new Map();
+  const spans = new Map();
+  let shared = null;
   document.querySelectorAll('.year').forEach((y) => {
+    const key = y.dataset.panel;
     const shots = y.querySelector('.year-shots');
-    if (!shots) return;
-    const label = y.querySelector('h3').textContent.trim();
+    if (key && shared && shared.key === key) {
+      if (shots) shared.g.insertAdjacentHTML('beforeend', captioned(shots, y));
+      groups.set(y, shared.g);
+      spans.get(shared.g).push(y);
+      return;
+    }
+    if (!shots && !key) return;
     const g = document.createElement('div');
     g.className = 'aw-group';
-    g.innerHTML = `<p class="aw-group-year">${label}</p>` + shots.innerHTML;
-    g.querySelectorAll('img').forEach((img) => img.removeAttribute('loading'));
+    g.innerHTML = `<p class="aw-group-year">${key || y.querySelector('h3').textContent.trim()}</p>`
+      + (shots ? (key ? captioned(shots, y) : shots.innerHTML) : '');
     panel.appendChild(g);
     groups.set(y, g);
+    spans.set(g, [y]);
+    shared = key ? { key, g } : null;
   });
+  panel.querySelectorAll('img').forEach((img) => img.removeAttribute('loading'));
+  function captioned(shots, y) {
+    const year = y.querySelector('h3').textContent.trim();
+    const box = shots.cloneNode(true);
+    box.querySelectorAll('figcaption').forEach((f) => { f.textContent = `${year} · ${f.textContent}`; });
+    return box.innerHTML;
+  }
   if (groups.size) {
     awLayout.appendChild(panel);
     awLayout.classList.add('has-panel');
@@ -66,10 +84,12 @@ if (awLayout) {
       ticking = true;
       requestAnimationFrame(() => {
         ticking = false;
-        const on = [...groups.entries()].find(([, g]) => g.classList.contains('is-on'));
-        if (!on) return;
-        const r = on[0].getBoundingClientRect();
-        const t = Math.min(1, Math.max(0, (innerHeight * 0.3 - r.top) / Math.max(1, r.height)));
+        const g = panel.querySelector('.aw-group.is-on');
+        if (!g) return;
+        const ys = spans.get(g);
+        const top = ys[0].getBoundingClientRect().top;
+        const height = ys[ys.length - 1].getBoundingClientRect().bottom - top;
+        const t = Math.min(1, Math.max(0, (innerHeight * 0.3 - top) / Math.max(1, height - innerHeight * 0.6)));
         panel.scrollTop = t * (panel.scrollHeight - panel.clientHeight);
       });
     }, { passive: true });
