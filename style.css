@@ -662,3 +662,7 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 @media (max-width: 640px) {
   .captain-stats dd { font-size: 22px; white-space: nowrap; }
 }
+/* 学术：iGEM 颁奖现场 */
+.igem-row { display: grid; grid-template-columns: 1.4fr 1fr; gap: 8px; margin-top: 8px; }
+.igem-fig img { display: block; width: 100%; height: auto; border-radius: 6px; background: #000; }
+.igem-row img { height: 100%; object-fit: cover; }
