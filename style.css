@@ -113,13 +113,16 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .hero-photo { position: relative; }
 .hero-photo img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 50% 30%; border-radius: 16px; }
 .hero-photo figcaption { position: absolute; left: 12px; bottom: 12px; font-size: 12.5px; color: #fff; background: rgba(15,18,26,0.62); padding: 4px 10px; border-radius: 6px; backdrop-filter: blur(6px); }
-.hero-stats { grid-column: 1 / -1; list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); border-top: 1px solid var(--line); }
-.hero-stats li { padding: 18px 16px 0 0; display: grid; gap: 6px; align-content: start; }
-.hero-stats li + li { padding-left: 16px; border-left: 1px solid var(--line); }
+.hero-stats { grid-column: 1 / -1; list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); border-top: 2px solid var(--ink); }
+.hero-stats li { padding: 20px 20px 20px 0; display: grid; gap: 8px; align-content: start; border-bottom: 1px solid var(--line); }
+.hero-stats li:nth-child(3n+1) { padding-left: 0; border-left: 0; }
+.hero-stats li + li { padding-left: 20px; border-left: 1px solid var(--line); }
 .hero-stats .num { font-family: var(--font-display); font-size: clamp(30px, 4vw, 42px); line-height: 1; font-weight: 900; }
-.hero-stats .num small { font-size: 0.5em; margin-left: 2px; color: var(--muted); }
-.hero-stats li:first-child .num { color: var(--track); }
-.hero-stats span { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
+.hero-stats .num small { font-size: 0.42em; margin: 0 3px; color: var(--muted); font-weight: 700; }
+.hero-stats li:nth-child(3) .num { color: var(--track); }
+.hero-stats li:nth-child(2) .num { color: var(--accent); }
+.hero-stats span { font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+.hero-stats em { display: block; font-style: normal; font-size: 15px; font-weight: 700; color: var(--ink); }
 
 /* ---------- 01 教育：竖向年表 + 成绩单 ---------- */
 .sec-edu { border-top: 1px solid var(--line); }
@@ -131,6 +134,8 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .edu-timeline > li::before { content: ""; position: absolute; left: 0; top: 6px; width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); }
 .edu-year { font-size: 15px; color: var(--accent); letter-spacing: 0.06em; }
 .edu-body h3 { font-family: var(--font-display); font-size: clamp(30px, 4vw, 40px); font-weight: 900; line-height: 1.2; margin-top: 4px; }
+.edu-school { display: flex; align-items: center; gap: 14px; }
+.edu-school img { width: clamp(48px, 6vw, 64px); height: auto; flex: 0 0 auto; }
 .edu-unit { font-weight: 600; margin-top: 6px; }
 .edu-note { color: var(--muted); margin-top: 10px; max-width: 32em; }
 .edu-note b { color: var(--ink); font-weight: 600; }
@@ -400,7 +405,7 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .year h3 { font-size: 26px; font-weight: 700; color: var(--accent); position: sticky; top: 72px; align-self: start; border-top: 3px solid var(--accent); padding-top: 8px; }
 .year ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
 .year li { padding: 12px 0; border-bottom: 1px solid var(--line); font-size: 15px; display: flex; gap: 12px; align-items: baseline; }
-.lvl { flex: 0 0 auto; font-size: 11.5px; font-weight: 700; padding: 1px 8px; border-radius: 4px; white-space: nowrap; }
+.lvl { flex: 0 0 auto; min-width: 4.2em; text-align: center; font-size: 13.5px; font-weight: 700; padding: 3px 10px; border-radius: 6px; white-space: nowrap; }
 .l-i { background: var(--accent); color: #fff; }
 .l-n { background: var(--accent-soft); color: var(--accent); }
 .l-p { background: var(--track-soft); color: var(--track); }
@@ -450,8 +455,8 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
   .wrap { padding-inline: 16px; }
   .hero { padding-block: 40px 48px; }
   .hero-stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .hero-stats li:nth-child(3) { padding-left: 0; border-left: 0; }
-  .hero-stats li:nth-child(n+3) { margin-top: 18px; border-top: 1px solid var(--line); }
+  .hero-stats li, .hero-stats li + li { padding: 16px 12px 16px 14px; border-left: 1px solid var(--line); }
+  .hero-stats li:nth-child(odd) { padding-left: 0; border-left: 0; }
   .sec { padding-block: 64px; }
   .transcript { transform: none; padding: 20px 18px 26px; }
   .phones { padding-inline: 16px; gap: 18px; }
