@@ -1,6 +1,6 @@
-// 奖项筛选
+// 奖项筛选：隐藏不匹配的条目，整年都没有条目时连年份一起隐藏
 const filters = document.querySelectorAll('.filter');
-const awards = document.querySelectorAll('.awards li');
+const years = document.querySelectorAll('.year');
 filters.forEach((btn) => {
   btn.addEventListener('click', () => {
     const f = btn.dataset.f;
@@ -9,8 +9,13 @@ filters.forEach((btn) => {
       b.classList.toggle('is-on', on);
       b.setAttribute('aria-pressed', String(on));
     });
-    awards.forEach((li) => {
-      li.hidden = f !== 'all' && li.dataset.c !== f;
+    years.forEach((y) => {
+      let shown = 0;
+      y.querySelectorAll('li').forEach((li) => {
+        li.hidden = f !== 'all' && li.dataset.c !== f;
+        if (!li.hidden) shown += 1;
+      });
+      y.hidden = shown === 0;
     });
   });
 });
