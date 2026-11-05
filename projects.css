@@ -302,3 +302,63 @@
   .pj-term__perm, .pj-term__rows em, .pj-term__cols span:first-child { display: none; }
   .pj-term__body { padding: var(--pj-s3); }
 }
+
+/* 终端右侧预览：跟着鼠标所在的行切换（projects.js） */
+.pj-term__rows a.is-on { background: var(--pj-code-bar); box-shadow: inset 3px 0 0 var(--pj-g); }
+.pj-prev { display: grid; gap: var(--pj-s3); align-content: start; }
+.pj-prev[hidden] { display: none; }
+.pj-prev .pj-art { aspect-ratio: 4 / 3; }
+.pj-prev__line { font-size: var(--pj-t-ui); line-height: 1.65; }
+.pj-prev__nums { display: flex; flex-wrap: wrap; gap: var(--pj-s2) var(--pj-s5); }
+.pj-prev__nums:empty { display: none; }
+.pj-prev .pj-btn { justify-self: start; }
+.pj-art--steps { display: grid; place-items: center; padding: var(--pj-s5); }
+.pj-art--steps ol { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--pj-s2); width: 100%; max-width: 280px; }
+.pj-art--steps li { display: flex; align-items: baseline; gap: var(--pj-s3); padding: var(--pj-s2) var(--pj-s3); border-radius: var(--pj-r-sm); background: var(--surface); border: 1px solid var(--line); font-size: var(--pj-t-sm); font-weight: 600; }
+.pj-art--steps b { font-family: var(--font-mono); font-size: var(--pj-t-xs); color: var(--pj-g); }
+.pj-art--shot { padding-top: var(--pj-s4); }
+@media (hover: none) {
+  .pj-term__rows a.is-on { background: none; box-shadow: none; }
+}
+/* 预览里的截图：整张竖图完整显示（Study Skills 是 780×1600 的手机截图），不在 4:3 框里被拦腰切掉 */
+.pj-prev .pj-art--shot { aspect-ratio: auto; display: flex; justify-content: center; padding: var(--pj-s4) 0; }
+.pj-prev .pj-art--shot img { width: auto; height: 340px; max-width: 80%; border-radius: var(--pj-r-lg); border: 6px solid #0f121a; }
+/* 没有截图的项目：步骤横排成一行，不再竖着堆到被切掉 */
+.pj-prev .pj-art--steps { aspect-ratio: auto; padding: var(--pj-s4); }
+.pj-prev .pj-art--steps ol { max-width: none; grid-template-columns: repeat(auto-fit, minmax(5.5em, 1fr)); }
+.pj-prev .pj-art--steps li { flex-direction: column; gap: 2px; padding: var(--pj-s2); }
+.pj-prev .pj-art--cli { aspect-ratio: auto; padding: var(--pj-s4); }
+.pj-prev .pj-art--cli pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: var(--pj-t-2xs); }
+/* 预览里的横向网页截图：浏览器窗口外框 */
+.pj-prev .pj-art--web { aspect-ratio: auto; padding: var(--pj-s4); }
+.pj-art--web .bar { display: flex; gap: 6px; padding: var(--pj-s2) var(--pj-s3); background: var(--surface); border: 1px solid var(--line); border-bottom: 0; border-radius: var(--pj-r-sm) var(--pj-r-sm) 0 0; }
+.pj-art--web .bar i { width: 9px; height: 9px; border-radius: 50%; background: var(--line); }
+.pj-art--web img { display: block; width: 100%; border: 1px solid var(--line); border-radius: 0 0 var(--pj-r-sm) var(--pj-r-sm); }
+.pj-prev .pj-art--cli pre { max-height: 18lh; overflow: hidden; -webkit-mask-image: linear-gradient(#000 85%, transparent); mask-image: linear-gradient(#000 85%, transparent); }
+
+/* 命令行工具的运行结果图（RESULT，gen.py）：不贴原始输出 */
+.pj-prev .pj-art--result { aspect-ratio: auto; display: grid; gap: var(--pj-s3); align-content: center; padding: var(--pj-s5); min-height: 240px; }
+.pj-res-title { font-size: var(--pj-t-sm); font-weight: 700; color: var(--ink); }
+.pj-res-rows, .pj-res-packs, .pj-res-chain { list-style: none; margin: 0; padding: 0; }
+.pj-res-rows { display: grid; gap: var(--pj-s2); }
+.pj-res-rows li { display: grid; grid-template-columns: 4.2em minmax(0, 1fr) auto; align-items: center; gap: var(--pj-s3); padding: var(--pj-s2) var(--pj-s3); background: var(--surface); border: 1px solid var(--line); border-radius: var(--pj-r-sm); font-size: var(--pj-t-sm); }
+.pj-res-rows span { color: var(--muted); }
+.pj-art--result i { font-style: normal; font-size: var(--pj-t-xs); font-weight: 700; padding: 1px var(--pj-s2); border-radius: 999px; }
+.pj-art--result i.ok { background: var(--pj-live-soft); color: var(--pj-live); }
+.pj-art--result i.warn { background: color-mix(in srgb, var(--gold) 18%, var(--surface)); color: var(--gold); }
+.pj-res-tiers { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--pj-s2); }
+.pj-res-tiers div { display: grid; gap: var(--pj-s1); padding: var(--pj-s3); background: var(--surface); border: 1px solid var(--line); border-radius: var(--pj-r-sm); }
+.pj-res-tiers small { font-size: var(--pj-t-xs); color: var(--muted); }
+.pj-res-tiers b { font-family: var(--font-mono); font-size: var(--pj-t-xs); white-space: nowrap; }
+.pj-res-tiers span { font-size: var(--pj-t-xs); color: var(--muted); }
+.pj-res-tiers i { justify-self: start; }
+.pj-res-chain { display: flex; align-items: center; gap: var(--pj-s5); justify-content: center; }
+.pj-res-chain li { position: relative; display: grid; gap: 2px; justify-items: center; padding: var(--pj-s3) var(--pj-s4); background: var(--surface); border: 2px solid var(--line); border-radius: var(--pj-r); font-size: var(--pj-t-sm); }
+.pj-res-chain li:not(:last-child)::after { content: "→"; position: absolute; right: calc(-1 * var(--pj-s5) + 4px); color: var(--muted); }
+.pj-res-chain span { font-size: var(--pj-t-xs); color: var(--muted); }
+.pj-res-chain .done { border-color: var(--pj-live); }
+.pj-res-chain .run { border-color: var(--pj-g); }
+.pj-res-chain .wait { border-style: dashed; }
+.pj-res-packs { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--pj-s2); }
+.pj-res-packs li { display: flex; justify-content: space-between; padding: var(--pj-s2) var(--pj-s3); background: var(--surface); border: 1px solid var(--line); border-radius: var(--pj-r-sm); font-size: var(--pj-t-sm); }
+.pj-res-packs span { color: var(--pj-live); font-weight: 700; font-size: var(--pj-t-xs); }
