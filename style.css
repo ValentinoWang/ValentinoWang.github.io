@@ -163,21 +163,9 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .phone-frame img { border-radius: 23px; width: 100%; aspect-ratio: 531 / 1100; object-fit: cover; object-position: top; }
 .phone figcaption { font-size: 13.5px; color: var(--muted); line-height: 1.55; }
 .phone figcaption b { display: block; color: var(--ink); font-size: 15px; }
-.phones-note { font-size: 12.5px; color: var(--muted); }
 
 /* 产品与技术：能力、架构、技术要点、研发流程、项目卡片 */
-/* ---------- 能力四栏 ---------- */
-.t-skills { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
-.t-skill { background: var(--surface); padding: 20px 20px 22px; display: grid; gap: 8px; align-content: start; }
-.t-skill h3 { font-size: 16.5px; font-weight: 800; }
-.t-skill p { font-size: 14px; color: var(--muted); line-height: 1.7; }
-.t-chips { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 4px; }
-.t-chips span { font-family: var(--font-mono); font-size: 11.5px; padding: 1px 7px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); }
 
-/* ---------- 子标题 ---------- */
-.t-sub { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin: 72px 0 20px; }
-.t-sub h3 { font-size: 24px; font-weight: 800; }
-.t-sub span { font-size: 14px; color: var(--muted); }
 
 /* ---------- Cadenvo 规模 ---------- */
 .t-stats { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
@@ -185,8 +173,6 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .t-stats dt { font-size: 13px; color: var(--muted); }
 .t-stats dd { margin: 0; font-family: var(--font-mono); font-size: 26px; font-weight: 600; color: var(--accent); font-variant-numeric: tabular-nums; line-height: 1.3; }
 .t-stats dd small { font-size: 14px; margin-left: 2px; }
-.t-role { margin: 14px 0 40px; font-size: 14.5px; color: var(--muted); max-width: 60em; }
-.t-role b { color: var(--ink); }
 
 /* ---------- 架构图 ---------- */
 .t-arch { margin-top: 20px; background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; overflow-x: auto; }
@@ -231,18 +217,6 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 .t-code pre { margin: 0; padding: 16px 18px 20px; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.75; overflow-x: auto; white-space: pre; flex: 1; }
 .t-code .c { color: #7f879c; } .t-code .k { color: #c9a8ff; } .t-code .n { color: #ffb22e; } .t-code .ok { color: #5ec26a; }
 
-/* ---------- 其他项目 ---------- */
-.t-projects { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
-.t-proj { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 20px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 8px; }
-.t-proj .top { display: flex; justify-content: space-between; align-items: baseline; gap: 10px; }
-.t-proj .cat { font-size: 12px; font-weight: 700; color: var(--accent); letter-spacing: 0.04em; }
-.t-proj .ev { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); white-space: nowrap; }
-.t-proj h4 { font-size: 17px; font-weight: 800; }
-.t-proj p { font-size: 14px; color: var(--muted); line-height: 1.7; }
-.t-proj-foot { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px; padding-top: 10px; border-top: 1px solid var(--line); }
-.t-proj-foot .stack { font-family: var(--font-mono); font-size: 11.5px; color: var(--muted); }
-.t-proj-foot a { font-size: 13px; font-weight: 600; white-space: nowrap; }
-.t-proj.wide { grid-column: span 2; }
 
 /* ---------- 迭代线 ---------- */
 .t-line { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); position: relative; }
@@ -503,14 +477,10 @@ a:focus-visible, button:focus-visible, .phones:focus-visible { outline: 2px soli
 
 /* 产品与技术：窄屏 */
 @media (max-width: 960px) {
-  .t-skills { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .t-stats { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .t-flow-wrap, .t-deep { grid-template-columns: minmax(0, 1fr); }
-  .t-projects { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 640px) {
-  .t-skills, .t-projects { grid-template-columns: minmax(0, 1fr); }
-  .t-proj.wide { grid-column: auto; }
   .t-arch { padding: 14px; overflow: visible; }
   .t-arch svg { display: none; }
   .t-arch-list { display: grid; }
