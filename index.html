@@ -9,6 +9,7 @@
 <meta property="og:description" content="兰大数学本科，清华人工智能硕士，国家二级短跑运动员，用 AI 做训练系统 Cadenvo。">
 <meta property="og:image" content="https://valentinowang.github.io/assets/hero-award.jpg">
 <link rel="stylesheet" href="style.css?v=e62138d1">
+<link rel="stylesheet" href="projects.css">
 </head>
 <body>
 
@@ -207,76 +208,40 @@
     </figure>
   </div>
   <div class="wrap">
-    <p class="phones-note">截图来自 Cadenvo 的验收画廊，使用演示数据。</p>
+    <p class="phones-note">截图来自 Cadenvo 的验收画廊，使用演示数据。<a href="p/cadenvo.html">看项目 →</a></p>
 
-    <!-- ===== 其他项目 ===== -->
-    <div class="t-sub"><h3>其他项目</h3></div>
-
-    <div class="t-projects">
-      <article class="t-proj wide">
-        <div class="top"><span class="cat">AI 教育 · 全栈</span><span class="ev">私有 · 159 次提交</span></div>
-        <h4>鸿儒数字化教育 MVP</h4>
-        <p>学生拍一道题上传，系统分六步分析。完整分析要等一阵，所以每一步算完就先推给学生看；最后画出知识点图谱、给出诊断，再出几道变式题。网页和微信小程序都做了。</p>
-        <div class="t-proj-foot"><span class="stack">FastAPI · Vue 3 · uni-app · 微信小程序 · G6</span></div>
-      </article>
-      <article class="t-proj">
-        <div class="top"><span class="cat">工业软件</span><span class="ev">私有</span></div>
-        <h4>AIDCIS 管板孔智能检测</h4>
-        <p>给核电设备做的管板孔检测软件。从导入图纸、按区域逐个检测、实时看数据、判定缺陷，到最后出报告，都在一个软件里完成。</p>
-        <div class="t-proj-foot"><span class="stack">Python · PySide6 · DXF</span></div>
-      </article>
-
-      <article class="t-proj">
-        <div class="top"><span class="cat">开发者工具 · MCP</span><span class="ev">公开</span></div>
-        <h4>ProjectNavigatorMCP</h4>
-        <p>AI 改代码时常常找错文件、漏掉受影响的测试。所以先给它一张代码地图：这个函数在哪，谁在调用，改了要跑哪些测试。</p>
-        <div class="t-proj-foot"><span class="stack">TypeScript · MCP · SQLite</span><a href="https://github.com/ValentinoWang/ProjectNavigatorMCP" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
-      <article class="t-proj">
-        <div class="top"><span class="cat">开发者工具 · MCP</span><span class="ev">公开</span></div>
-        <h4>Control-PromotionMCP</h4>
-        <p>同样的错误，AI 会一犯再犯，在提示词里多叮嘱一句没什么用。所以同一个坑踩到第二次，就把它升级：写进文档，变成自动检查，最后从类型上杜绝。</p>
-        <div class="t-proj-foot"><span class="stack">Python · MCP</span><a href="https://github.com/ValentinoWang/Control-PromotionMCP" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
-      <article class="t-proj">
-        <div class="top"><span class="cat">模型路由</span><span class="ev">公开</span></div>
-        <h4>codex-worker-tier-router</h4>
-        <p>不是每件事都值得用最贵的模型。按通过率、速度和花费给模型打分：简单的活交给又快又便宜的，关键评审才用最强的。</p>
-        <div class="t-proj-foot"><span class="stack">Shell</span><a href="https://github.com/ValentinoWang/codex-worker-tier-router" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
-
-      <article class="t-proj">
-        <div class="top"><span class="cat">研发治理</span><span class="ev">私有 · 765 次提交</span></div>
-        <h4>Harness Engineering</h4>
-        <p>项目一多，同一条规则会在几个仓库里各写一份，时间长了就对不上。所以把 AI 协作规则和检查脚本集中到一处，各项目引用同一份。</p>
-        <div class="t-proj-foot"><span class="stack">Python · YAML · GitHub Actions</span></div>
-      </article>
-      <article class="t-proj">
-        <div class="top"><span class="cat">内容创作系统</span><span class="ev">私有 · 1,368 次提交</span></div>
-        <h4>OpenClaw Media</h4>
-        <p>我自己的账号就在用。选题、写稿、拍摄、剪辑、发布和复盘放在一个系统里；原始素材只留在本机，不传云端。</p>
-        <div class="t-proj-foot"><span class="stack">Python · Web · Agent CLI</span></div>
-      </article>
-      <article class="t-proj">
-        <div class="top"><span class="cat">多模态流水线</span><span class="ev">公开</span></div>
-        <h4>Photo Content OS</h4>
-        <p>素材一多，找镜头比剪辑还费时间。它先看画面、听台词，再对照脚本挑出合适的片段，最后导出给剪辑软件。</p>
-        <div class="t-proj-foot"><span class="stack">Python · 多模态</span><a href="https://github.com/ValentinoWang/photo-content-os" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
-
-      <article class="t-proj wide">
-        <div class="top"><span class="cat">计算机视觉研究</span><span class="ev">公开 · 3 篇论文</span></div>
-        <h4>工业视觉检测的迁移与安全更新</h4>
-        <p>工厂换了产线，检测模型往往就不准了。我研究两件事：迁移之前先挑出真正有用的训练样本；现场采集出问题时，判断模型这次该不该更新。也参与了 Style Adaptation Module 的工作。</p>
-        <div class="t-proj-foot"><span class="stack">PyTorch · YOLO · DANN · OpenCV</span><a href="https://github.com/ValentinoWang/Industrial_Visual_Inspection_Research" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
-      <article class="t-proj">
-        <div class="top"><span class="cat">前端工具</span><span class="ev">公开</span></div>
-        <h4>Open Fronted Design</h4>
-        <p>改前端时，最难的是说清楚哪里不对。把真实页面、设计稿和参考图摆在一起，问题一眼就能看出来；再让 AI 出几版方案，人来挑。</p>
-        <div class="t-proj-foot"><span class="stack">原生 JS · Python</span><a href="https://github.com/ValentinoWang/Open_Fronted_Design" target="_blank" rel="noopener">GitHub ↗</a></div>
-      </article>
+    <!-- ===== 项目（设计系统见 DESIGN-SYSTEM.md：主页只放重点，聚合页 projects.html，详情页 p/） ===== -->
+    <div class="t-sub"><h3>代表项目</h3><span>Cadenvo 之外，产品、AI 研发工具、研究各选一个</span></div>
+    <div class="pj-grid pj-grid--3">
+      <a class="pj-card" data-g="prod" href="p/cunmu.html">
+        
+        <div class="pj-card__body">
+          <div class="pj-tags"><span class="pj-tag pj-tag--cat">个人成长 Agent</span></div>
+          <h3 class="pj-card__title">寸木</h3>
+          <p class="pj-card__text">说一句话，它整理成待办、学习、人物记录</p>
+          <span class="pj-metric"><b>141 → 0.13</b><small>秒，周记列表一次请求</small></span>
+        </div>
+      </a>
+      <a class="pj-card" data-g="tool" href="p/harness.html">
+        
+        <div class="pj-card__body">
+          <div class="pj-tags"><span class="pj-tag pj-tag--cat">研发治理</span></div>
+          <h3 class="pj-card__title">Harness Engineering</h3>
+          <p class="pj-card__text">让几个 AI 编程助手守同一套规矩</p>
+          <span class="pj-metric"><b>453</b><small>条 AI 写错的事故记录</small></span>
+        </div>
+      </a>
+      <a class="pj-card" data-g="res" href="p/matharc.html">
+        
+        <div class="pj-card__body">
+          <div class="pj-tags"><span class="pj-tag pj-tag--cat">AI4Math</span></div>
+          <h3 class="pj-card__title">MathArc Research</h3>
+          <p class="pj-card__text">AI 参与数学研究，结论不由 AI 自己批准</p>
+          <span class="pj-metric"><b>1,236</b><small>次提交，2026-08 起</small></span>
+        </div>
+      </a>
     </div>
+    <a class="pj-more" href="projects.html">全部 15 个项目 →<small>AIDCIS 管板孔智能检测、自媒体创作 Agent、鸿儒数字化教育 MVP、Photo Content OS 等</small></a>
 
   </div>
 </section>

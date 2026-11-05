@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>寸木 · 王思尧</title>
+<meta name="description" content="随手说一句，整理成待办、学习、人物关系等记录；AI 只给候选，我确认后才写入。">
+<link rel="stylesheet" href="../style.css?v=e62138d1">
+<link rel="stylesheet" href="../projects.css">
+</head>
+<body class="pj-page">
+<nav class="topnav pj-nav" aria-label="页面导航"><a class="brand" href="../projects.html">← 全部项目</a><a class="pj-nav-home" href="../index.html">王思尧</a></nav>
+<main class="pj-detail" data-g="prod" data-tier="A">
+  <header class="pj-hero">
+    <div class="wrap">
+      <div class="pj-tags"><span class="pj-tag pj-tag--cat">个人成长 Agent</span><span class="pj-tag pj-tag--live">我每天在用</span></div>
+      <h1 class="pj-title">寸木</h1>
+      <p class="pj-lead">随手说一句，整理成待办、学习、人物关系等记录；AI 只给候选，我确认后才写入。</p>
+      <p class="pj-meta">2026-10 至今 · 独立开发 · Python · FastAPI · React · PostgreSQL</p>
+      <div class="pj-actions">私有仓库，见面可演示</div>
+    </div>
+  </header>
+  <div class="wrap"><dl class="pj-stats" style="--n:2"><div class="pj-metric"><dd>141 → 0.13</dd><dt>秒，周记列表一次请求</dt></div><div class="pj-metric"><dd>1,120</dd><dt>次单条读取改成批量</dt></div></dl></div>
+  <div class="wrap"><div class="pj-show"><div class="pj-art pj-art--bars pj-art--framed"><div class="row"><span>优化前</span><i style="width:100%"></i><b>141.18 秒</b></div><div class="row now"><span>优化后</span><i style="width:1.2%"></i><b>0.125 秒</b></div><p>同一个请求，开发环境实测，返回内容不变</p></div></div></div>
+  <div class="wrap">
+    <section class="pj-sec"><h2><span class="mono">流程</span>它怎么工作</h2><ol class="pj-flow" style="--n:5"><li><b>01</b>随手说一句</li><li><b>02</b>AI 整理成候选</li><li><b>03</b>我确认</li><li><b>04</b>写入记录</li><li><b>05</b>汇总进周记</li></ol></section>
+    <section class="pj-sec"><h2><span class="mono">01</span>背景</h2><p>我想把随手记、学习资料、待办和人际往来放在一处，又不想填表。记录多了以后周记页越来越慢：开发环境里打开周记列表要 58 到 188 秒。</p></section><section class="pj-sec"><h2><span class="mono">02</span>目标</h2><p>周记列表冷请求 1.5 秒以内；优化前后返回内容完全一致；撤销授权后立刻生效。</p></section><section class="pj-sec"><h2><span class="mono">03</span>我负责</h2><p>独立设计和开发，产品、后端、前端、部署都是自己做。</p></section><section class="pj-sec"><h2><span class="mono">04</span>方案与取舍</h2><p>产品代码和共享机制分层，依赖只能从产品指向共享层；权限和私有数据由产品自己管。</p><div class="pj-choices"><div class="pj-choice"><p class="pick"><span>选了</span>同一次请求内批量读取、共用数据库连接</p><p class="drop"><span>没选</span>跨请求的全局缓存</p><p class="why">授权一撤销就要立刻生效，全局缓存会让撤销晚到。代价是请求上下文要一路传下去。</p></div><div class="pj-choice"><p class="pick"><span>选了</span>AI 只出候选，我确认后才写入</p><p class="drop"><span>没选</span>AI 直接写进记录</p><p class="why">这是我的个人记录，写错比漏写代价大。代价是多一步确认。</p></div></div></section><section class="pj-sec"><h2><span class="mono">05</span>难点</h2><div class="pj-cause"><div><span>现象</span><p>一篇周记触发约 1,120 次单条读取，列表请求最慢要 188 秒。</p></div><div><span>原因</span><p>渲染时重复计算档案、逐条查询，还在连接范围外反复新建数据库连接。</p></div><div class="fix"><span>解法</span><p>改成批量查询，同一次请求共享读取上下文和数据库连接。</p></div></div></section><section class="pj-sec"><h2><span class="mono">06</span>结果</h2><p class="pj-result">2026-10-10 在开发环境量同一个请求：从 141.18 秒降到 0.125 秒，去掉请求编号后返回内容完全一致（单次测量）。</p></section><section class="pj-sec"><h2><span class="mono">07</span>复盘</h2><p>这次只量了周记，月记详情没拿到成功的响应；还要在生产数据上再量一次。</p></section>
+    <section class="pj-sec"><h2><span class="mono">提交</span>每月提交数</h2><ol class="pj-bars" style="--n:7"><li><b>36</b><i style="height:5%"></i><span>26.04</span></li><li><b>14</b><i style="height:2%"></i><span>26.05</span></li><li><b></b><i style="height:2%"></i><span>26.06</span></li><li><b>2</b><i style="height:2%"></i><span>26.07</span></li><li><b>707</b><i style="height:100%"></i><span>26.08</span></li><li><b>422</b><i style="height:60%"></i><span>26.09</span></li><li><b>187</b><i style="height:26%"></i><span>26.10</span></li></ol><p class="pj-cap">共 1,368 次，取自代码仓库（2026-11-06）。和自媒体创作 Agent 是同一段提交历史，2026-10 拆成独立项目。</p></section>
+    <nav class="pj-pager" aria-label="其他项目"><a class="prev" href="cadenvo.html"><small>上一个</small>Cadenvo</a><a class="next" href="harness.html"><small>下一个</small>Harness Engineering</a></nav>
+  </div>
+</main>
+</body>
+</html>

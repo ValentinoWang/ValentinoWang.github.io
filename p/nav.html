@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ProjectNavigatorMCP · 王思尧</title>
+<meta name="description" content="给 AI 的代码地图。">
+<link rel="stylesheet" href="../style.css?v=e62138d1">
+<link rel="stylesheet" href="../projects.css">
+</head>
+<body class="pj-page">
+<nav class="topnav pj-nav" aria-label="页面导航"><a class="brand" href="../projects.html">← 全部项目</a><a class="pj-nav-home" href="../index.html">王思尧</a></nav>
+<main class="pj-detail" data-g="tool" data-tier="C">
+  <header class="pj-hero">
+    <div class="wrap">
+      <div class="pj-tags"><span class="pj-tag pj-tag--cat">开发者工具 · MCP</span><span class="pj-tag pj-tag--open">开源</span></div>
+      <h1 class="pj-title">ProjectNavigatorMCP</h1>
+      <p class="pj-lead">给 AI 的代码地图。</p>
+      <p class="pj-meta">2026-05 至 2026-08 · TypeScript · MCP · SQLite</p>
+      <div class="pj-actions"><a class="pj-btn" href="https://github.com/ValentinoWang/ProjectNavigatorMCP" target="_blank" rel="noopener">GitHub ↗</a></div>
+    </div>
+  </header>
+  <div class="wrap"><dl class="pj-stats" style="--n:2"><div class="pj-metric"><dd>2,500</dd><dt>字以内的上下文</dt></div><div class="pj-metric"><dd>32</dd><dt>次提交</dt></div></dl></div>
+  
+  <div class="wrap">
+    <section class="pj-sec"><h2><span class="mono">流程</span>它怎么工作</h2><ol class="pj-flow" style="--n:4"><li><b>01</b>扫描仓库</li><li><b>02</b>建本地代码地图</li><li><b>03</b>AI 通过 MCP 查询</li><li><b>04</b>给出主文件和验证命令</li></ol></section>
+    <section class="pj-sec"><h2><span class="mono">01</span>问题</h2><p>AI 改代码前不了解仓库结构，常找错文件、漏跑受影响的测试。</p></section><section class="pj-sec"><h2><span class="mono">02</span>做法</h2><p>把仓库扫描成本地 SQLite 代码地图，通过 MCP 查询；默认只给 3 个主文件和 3 条验证命令，上下文控制在 2,500 字以内。</p></section><section class="pj-sec"><h2><span class="mono">03</span>结果</h2><p class="pj-result">32 次提交；支持增量扫描和改动影响分析。</p></section>
+    <section class="pj-sec"><h2><span class="mono">提交</span>每月提交数</h2><ol class="pj-bars" style="--n:4"><li><b>27</b><i style="height:100%"></i><span>26.05</span></li><li><b>2</b><i style="height:7%"></i><span>26.06</span></li><li><b></b><i style="height:2%"></i><span>26.07</span></li><li><b>3</b><i style="height:11%"></i><span>26.08</span></li></ol><p class="pj-cap">共 32 次，取自代码仓库（2026-11-06）。</p></section>
+    <nav class="pj-pager" aria-label="其他项目"><a class="prev" href="study.html"><small>上一个</small>Study Skills</a><a class="next" href="promo.html"><small>下一个</small>Control-PromotionMCP</a></nav>
+  </div>
+</main>
+</body>
+</html>

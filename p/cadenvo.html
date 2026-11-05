@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Cadenvo · 王思尧</title>
+<meta name="description" content="给教练和运动员用的手机训练系统：教练排计划，运动员按组记录，双方一起复盘。">
+<link rel="stylesheet" href="../style.css?v=e62138d1">
+<link rel="stylesheet" href="../projects.css">
+</head>
+<body class="pj-page">
+<nav class="topnav pj-nav" aria-label="页面导航"><a class="brand" href="../projects.html">← 全部项目</a><a class="pj-nav-home" href="../index.html">王思尧</a></nav>
+<main class="pj-detail" data-g="prod" data-tier="A">
+  <header class="pj-hero">
+    <div class="wrap">
+      <div class="pj-tags"><span class="pj-tag pj-tag--cat">训练管理</span><span class="pj-tag pj-tag--live">持续开发</span></div>
+      <h1 class="pj-title">Cadenvo</h1>
+      <p class="pj-lead">给教练和运动员用的手机训练系统：教练排计划，运动员按组记录，双方一起复盘。</p>
+      <p class="pj-meta">2026-08 至今 · 发起人、技术负责人 · Flutter · FastAPI · PostgreSQL</p>
+      <div class="pj-actions">私有仓库，见面可演示</div>
+    </div>
+  </header>
+  <div class="wrap"><dl class="pj-stats" style="--n:3"><div class="pj-metric"><dd>2,446</dd><dt>次提交，2026-08 起</dt></div><div class="pj-metric"><dd>50</dd><dt>个业务页面</dt></div><div class="pj-metric"><dd>234 / 236</dd><dt>个后端操作已接到页面</dt></div></dl></div>
+  <div class="phones" tabindex="0" aria-label="Cadenvo 页面截图，可横向滚动"><figure class="phone"><div class="phone-frame"><img src="../assets/app-import.jpg" alt="AI 导入计划" width="531" height="1100" loading="lazy"></div><figcaption><b>AI 导入计划</b>粘贴文字或 Excel，AI 整理成逐日课程，再逐条确认</figcaption></figure><figure class="phone"><div class="phone-frame"><img src="../assets/app-cycle.jpg" alt="小周期总览" width="531" height="1100" loading="lazy"></div><figcaption><b>小周期总览</b>一周的强度节奏、名单和执行情况</figcaption></figure><figure class="phone"><div class="phone-frame"><img src="../assets/app-athlete.jpg" alt="运动员的今天" width="531" height="1100" loading="lazy"></div><figcaption><b>运动员的今天</b>教练发布的课程和自主训练放在一起</figcaption></figure><figure class="phone"><div class="phone-frame"><img src="../assets/app-execution.jpg" alt="训练执行" width="531" height="1100" loading="lazy"></div><figcaption><b>训练执行</b>一组一组记录重量和实际完成次数</figcaption></figure></div><div class="wrap"><p class="pj-cap">截图来自验收画廊，使用演示数据。</p></div>
+  <div class="wrap">
+    <section class="pj-sec"><h2><span class="mono">流程</span>它怎么工作</h2><ol class="pj-flow" style="--n:5"><li><b>01</b>教练排计划</li><li><b>02</b>AI 整理成草稿</li><li><b>03</b>教练确认发布</li><li><b>04</b>运动员按组记录</li><li><b>05</b>一起复盘</li></ol></section>
+    <section class="pj-sec"><h2><span class="mono">01</span>背景</h2><p>我练了七年短跑，很多时候没有教练。训练计划散在聊天记录和表格里，执行情况和成绩各放一处，复盘时找不齐。</p></section><section class="pj-sec"><h2><span class="mono">02</span>目标</h2><p>计划、执行、成绩放进同一个系统；AI 整理的计划只是待审核的草稿，正式成绩必须逐格确认。</p></section><section class="pj-sec"><h2><span class="mono">03</span>我负责</h2><p>发起人、技术负责人。业务仓库 2,446 次提交里，2,325 次署我的名字。</p></section><section class="pj-sec"><h2><span class="mono">04</span>方案与取舍</h2><p>Flutter Web 手机端加 FastAPI 后端，客户端由 OpenAPI 接口合同生成。组织数据和个人数据分开存，每次请求都重新核验身份和权限。</p><div class="pj-choices"><div class="pj-choice"><p class="pick"><span>选了</span>AI 只出待审核的草稿</p><p class="drop"><span>没选</span>AI 直接发布计划、写入成绩</p><p class="why">成绩记错会带偏之后的训练判断。代价是教练多一步确认。</p></div><div class="pj-choice"><p class="pick"><span>选了</span>客户端由接口合同自动生成</p><p class="drop"><span>没选</span>前后端各写一份接口代码</p><p class="why">两边字段不会对不上。代价是改接口要先改合同、再重新生成。</p></div></div></section><section class="pj-sec"><h2><span class="mono">05</span>结果</h2><p class="pj-result">前端工作台记录 50 个业务页面、2 个导航分组；236 个后端操作里，234 个已经对应到页面。</p></section><section class="pj-sec"><h2><span class="mono">06</span>复盘</h2><p>页面和接口对应上，只说明有归属，不等于真实调用过；还要做完整的业务验收和人工验收。</p></section>
+    <section class="pj-sec"><h2><span class="mono">提交</span>每月提交数</h2><ol class="pj-bars" style="--n:4"><li><b>24</b><i style="height:2%"></i><span>26.08</span></li><li><b>191</b><i style="height:14%"></i><span>26.09</span></li><li><b>1394</b><i style="height:100%"></i><span>26.10</span></li><li><b>837</b><i style="height:60%"></i><span>26.11</span></li></ol><p class="pj-cap">共 2,446 次，取自代码仓库（2026-11-06）。</p></section>
+    <nav class="pj-pager" aria-label="其他项目"><span></span><a class="next" href="cunmu.html"><small>下一个</small>寸木</a></nav>
+  </div>
+</main>
+</body>
+</html>

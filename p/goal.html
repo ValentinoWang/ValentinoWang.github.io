@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>codex-goal-watch · 王思尧</title>
+<meta name="description" content="看 AI 会话是否在干活。">
+<link rel="stylesheet" href="../style.css?v=e62138d1">
+<link rel="stylesheet" href="../projects.css">
+</head>
+<body class="pj-page">
+<nav class="topnav pj-nav" aria-label="页面导航"><a class="brand" href="../projects.html">← 全部项目</a><a class="pj-nav-home" href="../index.html">王思尧</a></nav>
+<main class="pj-detail" data-g="tool" data-tier="C">
+  <header class="pj-hero">
+    <div class="wrap">
+      <div class="pj-tags"><span class="pj-tag pj-tag--cat">命令行工具</span><span class="pj-tag pj-tag--open">开源</span></div>
+      <h1 class="pj-title">codex-goal-watch</h1>
+      <p class="pj-lead">看 AI 会话是否在干活。</p>
+      <p class="pj-meta">2026-06 · Python · SQLite</p>
+      <div class="pj-actions"><a class="pj-btn" href="https://github.com/ValentinoWang/codex-goal-watch" target="_blank" rel="noopener">GitHub ↗</a></div>
+    </div>
+  </header>
+  <div class="wrap"><dl class="pj-stats" style="--n:2"><div class="pj-metric"><dd>4</dd><dt>种退出码</dt></div><div class="pj-metric"><dd>0</dd><dt>个运行依赖</dt></div></dl></div>
+  
+  <div class="wrap">
+    <section class="pj-sec"><h2><span class="mono">流程</span>它怎么工作</h2><ol class="pj-flow" style="--n:3"><li><b>01</b>读 Codex 目标数据库</li><li><b>02</b>分开「在跑目标」和「会话开着」</li><li><b>03</b>给出退出码</li></ol></section>
+    <section class="pj-sec"><h2><span class="mono">01</span>问题</h2><p>AI 会话进程开着不代表在干活，按进程判断会误占共用的手机模拟器。</p></section><section class="pj-sec"><h2><span class="mono">02</span>做法</h2><p>直接读 Codex 的目标数据库，把「正在跑目标」和「会话开着」分开。</p></section><section class="pj-sec"><h2><span class="mono">03</span>结果</h2><p class="pj-result">4 种退出码（空闲、占用、超时、出错），脚本和 CI 直接调用。</p></section>
+    
+    <nav class="pj-pager" aria-label="其他项目"><a class="prev" href="router.html"><small>上一个</small>codex-worker-tier-router</a><span></span></nav>
+  </div>
+</main>
+</body>
+</html>

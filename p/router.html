@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>codex-worker-tier-router · 王思尧</title>
+<meta name="description" content="按任务难度选模型。">
+<link rel="stylesheet" href="../style.css?v=e62138d1">
+<link rel="stylesheet" href="../projects.css">
+</head>
+<body class="pj-page">
+<nav class="topnav pj-nav" aria-label="页面导航"><a class="brand" href="../projects.html">← 全部项目</a><a class="pj-nav-home" href="../index.html">王思尧</a></nav>
+<main class="pj-detail" data-g="tool" data-tier="C">
+  <header class="pj-hero">
+    <div class="wrap">
+      <div class="pj-tags"><span class="pj-tag pj-tag--cat">模型路由</span><span class="pj-tag pj-tag--open">开源</span></div>
+      <h1 class="pj-title">codex-worker-tier-router</h1>
+      <p class="pj-lead">按任务难度选模型。</p>
+      <p class="pj-meta">2026-07 · Shell</p>
+      <div class="pj-actions"><a class="pj-btn" href="https://github.com/ValentinoWang/codex-worker-tier-router" target="_blank" rel="noopener">GitHub ↗</a></div>
+    </div>
+  </header>
+  <div class="wrap"><dl class="pj-stats" style="--n:2"><div class="pj-metric"><dd>4</dd><dt>个任务等级</dt></div><div class="pj-metric"><dd>90%</dd><dt>高等级的质量门槛</dt></div></dl></div>
+  
+  <div class="wrap">
+    <section class="pj-sec"><h2><span class="mono">流程</span>它怎么工作</h2><ol class="pj-flow" style="--n:5"><li><b>01</b>读公开评测</li><li><b>02</b>任务分 4 级</li><li><b>03</b>按质量门槛筛</li><li><b>04</b>按速度和花费加权</li><li><b>05</b>生成调用配置</li></ol></section>
+    <section class="pj-sec"><h2><span class="mono">01</span>问题</h2><p>不是每件事都值得用最贵的模型。</p></section><section class="pj-sec"><h2><span class="mono">02</span>做法</h2><p>任务分 4 级，先按质量门槛筛（高两级至少达到最好成绩的 90%），再按速度和花费加权；高等级审查强制只读。</p></section><section class="pj-sec"><h2><span class="mono">03</span>结果</h2><p class="pj-result">每天 10:00 和 16:00 自动刷新配置；数据缺失时保留旧配置。</p></section>
+    
+    <nav class="pj-pager" aria-label="其他项目"><a class="prev" href="design.html"><small>上一个</small>前端设计工具</a><a class="next" href="goal.html"><small>下一个</small>codex-goal-watch</a></nav>
+  </div>
+</main>
+</body>
+</html>
